@@ -1,8 +1,9 @@
 CC = g++
 
 #CFLAGS for old 32-bit servers
-CFLAGS = -g -O3 -msse2 -march=pentium4 -fprefetch-loop-arrays 
+CFLAGS = -g -O3 -msse2 -m32 -fprefetch-loop-arrays 
 
+#-march=pentium4
 #CFLAGS for new 32-bit and all 64-bit servers
 #CFLAGS = -g -O3 -msse3 -march=nocona -fprefetch-loop-arrays 
 

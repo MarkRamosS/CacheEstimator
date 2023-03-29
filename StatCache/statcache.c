@@ -40,7 +40,6 @@ int main (int argc, char **argv)
 	int cache_size;
 	int cache_size_chkpt;
 	double miss_rate_random, miss_rate_lru;
-
 	// Initialization sets all the global variables and loads the histograms
 	// If not used as a standalone program, it should be probably removed
 	initialization(argc, argv);
@@ -50,6 +49,7 @@ int main (int argc, char **argv)
 
 	while (cache_size <= LARGEST_CACHE)
 	{
+        printf("Cache Size: %d", cache_size);
 		miss_rate_random = statcache_random_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 		miss_rate_lru    = statcache_lru_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 
@@ -79,9 +79,10 @@ static void initialization (int argc, char **argv)
 	
 	histogram       = (unsigned *) calloc(MAX_RD, sizeof(unsigned));
 	cumul_histogram = (long long unsigned *) calloc(MAX_RD, sizeof(long long unsigned));
-
+    printf("Here.");
 	while (scanf ("%*s\t%d\t%u\n", &rd, &hist_value) == 2)
 	{
+        printf("RD: %d \n", rd);
 		if (rd >= MAX_RD)
 			break;
 
@@ -89,7 +90,7 @@ static void initialization (int argc, char **argv)
 		histogram[rd]       = hist_value;
 	}
 	max_rd = rd;
-
+    printf("And here.");
 	cumul_histogram[0] = histogram[0];
 	for (rd = 1; rd <= max_rd; rd++)
 		cumul_histogram[rd] = cumul_histogram[rd - 1] + histogram[rd];
