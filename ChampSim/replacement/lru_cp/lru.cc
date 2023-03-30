@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iterator>
 
-#include "RDProf.cpp"
 #include "cache.h"
 #include "util.h"
 
@@ -21,9 +20,6 @@ void CACHE::update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, u
   if (hit && type == WRITEBACK)
     return;
 
-  if(type==LOAD || type==RFO){
-    rdprof();
-  }
   auto begin = std::next(block.begin(), set * NUM_WAY);
   auto end = std::next(begin, NUM_WAY);
   uint32_t hit_lru = std::next(begin, way)->lru;
