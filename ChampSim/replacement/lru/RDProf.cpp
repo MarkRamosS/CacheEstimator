@@ -6,6 +6,7 @@
 #include <atomic>
 #include <fstream>
 #include <numeric>
+#include <mutex>
 
 FILE *profile;
 
@@ -19,12 +20,14 @@ std::array<unsigned, MAX_BUCKET + 1> histogram_read;
 #endif
 std::array<counter_t, MAX_THREADS> now_lcl;
 
-PIN_LOCK glock;
+//PIN_LOCK glock;
+std::mutex glock;
 
 //-----------------------------------------------------------------------------
 //                           SAMPLER INTERFACE
 //-----------------------------------------------------------------------------
-VOID PIN_FAST_ANALYSIS_CALL update (VOID *addr, int is_read, int threadid) {
+//VOID PIN_FAST_ANALYSIS_CALL update (VOID *addr, int is_read, int threadid) {
+void update (uint64_t *addr, int is_read, int threadid) {
     counter_t distance;
     md_addr_t tag = GET_TAG((uint64_t)addr);
 
@@ -33,7 +36,8 @@ VOID PIN_FAST_ANALYSIS_CALL update (VOID *addr, int is_read, int threadid) {
         return;
     
 #if MAX_THREADS > 1
-    PIN_GetLock(&glock, 1);
+    //PIN_GetLock(&glock, 1);
+    glock.lock();
 #endif
     counter_t now = real_now();
 
@@ -54,7 +58,8 @@ VOID PIN_FAST_ANALYSIS_CALL update (VOID *addr, int is_read, int threadid) {
         remove_all_expired(now);
 
 #if MAX_THREADS > 1
-    PIN_ReleaseLock(&glock);
+    //PIN_ReleaseLock(&glock);
+    glock.unlock();
 #endif
 }
 
@@ -91,7 +96,8 @@ void remove_all_expired(counter_t now) {
 //-----------------------------------------------------------------------------
 //                    INITIALIZATION AND FINISH                                
 //-----------------------------------------------------------------------------
-KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE, "pintool", "o", "prof.out", "specify output file name");
+
+//KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE, "pintool", "o", "prof.out", "specify output file name");
 
 void init()
 {

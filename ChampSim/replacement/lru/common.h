@@ -4,12 +4,14 @@
 
 #ifndef COMMON_H
 #define COMMON_H
-#include "~/pin/pin-3.26-98690-g1fc9d60e6-gcc-linux/source/include/pin.H"
+//#include "pin.H"
 #include <array>
 #include <bitset>
 #include <cassert>
 #include <cstdint>
 #include <forward_list>
+#include <mutex>
+#include <shared_mutex>
 #include <iostream>
 #include <optional>
 #include <unordered_map>
@@ -52,7 +54,7 @@ class Sampler
 {
     private:
         std::array<std::unordered_map<md_addr_t, counter_t>, SAMPLER_WIDTH> sampler;
-        std::array<PIN_RWMUTEX, SAMPLER_WIDTH> mutexes;
+        std::array<std::shared_mutex, SAMPLER_WIDTH> mutexes;
 
         #ifdef SAMPLER_STATS
         int samples{0};

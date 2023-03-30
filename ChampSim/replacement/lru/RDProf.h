@@ -18,7 +18,7 @@
 
 #define GET_TAG(addr) (addr >> BITS_OFFSET)
 
-VOID update (VOID *addr, int is_read, int threadid);
+void update (uint64_t *addr, int is_read, int threadid);
 inline bool early_return(md_addr_t tag, counter_t now);
 void update_histogram(counter_t distance, int read);
 counter_t real_now();
