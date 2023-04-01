@@ -23,7 +23,6 @@ std::array<counter_t, MAX_THREADS> now_lcl;
 
 //PIN_LOCK glock;
 std::mutex glock;
-
 //-----------------------------------------------------------------------------
 //                           SAMPLER INTERFACE
 //-----------------------------------------------------------------------------
@@ -94,12 +93,6 @@ void remove_all_expired(counter_t now) {
     }
 }
 
-//-----------------------------------------------------------------------------
-//                    INITIALIZATION AND FINISH                                
-//-----------------------------------------------------------------------------
-
-//KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE, "pintool", "o", "prof.out", "specify output file name");
-
 void rdprof_init()
 {
     smpl = new Sampler;
@@ -109,34 +102,6 @@ void rdprof_init()
 
 }
 
-
-/*
-// Is called for every instruction and instruments reads and writes
-void Instruction(INS ins, VOID *v)
-{
-    // Instruments memory accesses using a predicated call, i.e.
-    // the instrumentation is called iff the instruction will actually be executed.
-    //
-    // On the IA-32 and Intel(R) 64 architectures conditional moves and REP 
-    // prefixed instructions appear as predicated instructions in Pin.
-    uint32_t memOperands = INS_MemoryOperandCount(ins);
-
-    // Iterate over each memory operand of the instruction.
-    for (UINT32 memOp = 0; memOp < memOperands; memOp++)
-    {
-        if (INS_MemoryOperandIsRead(ins, memOp))
-            INS_InsertPredicatedCall(
-                ins, IPOINT_BEFORE, (AFUNPTR)update, IARG_FAST_ANALYSIS_CALL,
-                IARG_MEMORYOP_EA, memOp, IARG_UINT32, 1, IARG_THREAD_ID, IARG_END);
-        if (INS_MemoryOperandIsWritten(ins, memOp))
-            INS_InsertPredicatedCall(
-                ins, IPOINT_BEFORE, (AFUNPTR)update, IARG_FAST_ANALYSIS_CALL,
-                IARG_MEMORYOP_EA, memOp, IARG_UINT32, 0, IARG_THREAD_ID, IARG_END);
-    }
-}
-*/
-
-//VOID Fini(INT32 code, VOID *v)
 void rdprof_fini()
 {
     smpl->stats_print(profile, real_now());

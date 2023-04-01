@@ -7,7 +7,7 @@
 
 #include "common.h"
 
-#define SAMPLING_PERIOD (1024 * 1024 * 1024)
+#define SAMPLING_PERIOD (16)
 #define SAMPLING_PERIOD_MSK (SAMPLING_PERIOD - 1)
 
 #define REFRESH_PERIOD (MAX_DISTANCE >> 1)
