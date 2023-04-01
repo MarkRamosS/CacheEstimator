@@ -3,16 +3,13 @@
 // vim: set expandtab:
 
 #include "sampler.h"
+#include <mutex>
 
 //----------------------------------------------------------------------------
 //                             SAMPLER
 //----------------------------------------------------------------------------
 
-Sampler::Sampler()
-{
-    for (auto& mutex: mutexes)
-        PIN_RWMutexInit(&mutex);
-}
+Sampler::Sampler() = default;
 
 // Check whether the sampler has a sample for this tag
 bool Sampler::has (md_addr_t tag)
@@ -26,14 +23,16 @@ bool Sampler::has (md_addr_t tag)
 
 #if MAX_THREADS > 1
     auto& m = mutexes[idx];
-    PIN_RWMutexReadLock(&m);
+    m.lock_shared();
+    //PIN_RWMutexReadLock(&m);
 #endif
 
     //---> More expensive check, but while holding only a read mutex
     found = sampler[idx].count(tag) > 0;
 
 #if MAX_THREADS > 1
-    PIN_RWMutexUnlock(&m);
+    m.unlock_shared();
+    //PIN_RWMutexUnlock(&m);
 #endif
 
     return found;
@@ -47,7 +46,8 @@ void Sampler::add (md_addr_t tag, counter_t now)
 
 #if MAX_THREADS > 1
     auto& m = mutexes[idx];
-    PIN_RWMutexReadLock(&m);
+    //PIN_RWMutexReadLock(&m);
+    m.lock();
 #endif
 
     l[tag] = now;
@@ -56,7 +56,8 @@ void Sampler::add (md_addr_t tag, counter_t now)
 
 
 #if MAX_THREADS > 1
-    PIN_RWMutexUnlock(&m);
+    m.unloc();
+    //PIN_RWMutexUnlock(&m);
 #endif
 }
 
@@ -71,7 +72,8 @@ std::optional<sample> Sampler::remove (md_addr_t tag, counter_t now)
     //---> Try to do the actual removal, while holding a write mutex
     //---> Might not find the entry, if it was removed in the meantime
     auto& m = mutexes[idx];
-    PIN_RWMutexReadLock(&m);
+    m.lock();
+    //PIN_RWMutexReadLock(&m);
 #endif
 
     auto it = l.find(tag);
@@ -82,7 +84,8 @@ std::optional<sample> Sampler::remove (md_addr_t tag, counter_t now)
     }
 
 #if MAX_THREADS > 1
-    PIN_RWMutexUnlock(&m);
+    m.unlock();
+    //PIN_RWMutexUnlock(&m);
 #endif
 
     return entry;
@@ -101,7 +104,8 @@ std::optional<sample> Sampler::remove_expired (md_addr_t idx, counter_t now)
 
 #if MAX_THREADS > 1
     auto& m = mutexes[idx];
-    PIN_RWMutexReadLock(&m);
+    m.lock();
+    //PIN_RWMutexReadLock(&m);
 #endif
 
     // Check the list one by one item
@@ -116,7 +120,8 @@ std::optional<sample> Sampler::remove_expired (md_addr_t idx, counter_t now)
     }
 
 #if MAX_THREADS > 1
-    PIN_RWMutexUnlock(&m);
+    m.unlock();
+    //PIN_RWMutexUnlock(&m);
 #endif
 
     return entry;

@@ -1,11 +1,12 @@
 #include <algorithm>
 #include <iterator>
 
-#include "RDProf.cpp"
 #include "cache.h"
 #include "util.h"
 
-void CACHE::initialize_replacement() {}
+void CACHE::initialize_replacement() {
+    cout<<"Initializing LRU."<<endl;
+}
 
 // find replacement victim
 uint32_t CACHE::find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK* current_set, uint64_t ip, uint64_t full_addr, uint32_t type)
@@ -21,9 +22,6 @@ void CACHE::update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, u
   if (hit && type == WRITEBACK)
     return;
 
-  if(type==LOAD || type==RFO){
-    rdprof();
-  }
   auto begin = std::next(block.begin(), set * NUM_WAY);
   auto end = std::next(begin, NUM_WAY);
   uint32_t hit_lru = std::next(begin, way)->lru;

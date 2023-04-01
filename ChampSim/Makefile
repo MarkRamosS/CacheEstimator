@@ -21,6 +21,8 @@ clean:
 
 	 find replacement/lru -name \*.o -delete
 	 find replacement/lru -name \*.d -delete
+	 find replacement/rdlru -name \*.o -delete
+	 find replacement/rdlru -name \*.d -delete
 	 find prefetcher/no -name \*.o -delete
 	 find prefetcher/no -name \*.d -delete
 	 find prefetcher/no_instr -name \*.o -delete
@@ -30,13 +32,20 @@ clean:
 	 find btb/basic_btb -name \*.o -delete
 	 find btb/basic_btb -name \*.d -delete
 
-bin/champsim: $(patsubst %.cc,%.o,$(wildcard src/*.cc)) obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/bpred_bbranchDbimodal.a obj/btb_bbtbDbasic_btb.a
+bin/champsim: $(patsubst %.cc,%.o,$(wildcard src/*.cc)) obj/repl_rreplacementDlru.a obj/repl_rreplacementDrdlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/bpred_bbranchDbimodal.a obj/btb_bbtbDbasic_btb.a
 	$(CXX) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 replacement/lru/%.o: CFLAGS += -Ireplacement/lru
 replacement/lru/%.o: CXXFLAGS += -Ireplacement/lru
 replacement/lru/%.o: CXXFLAGS +=  -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats
 obj/repl_rreplacementDlru.a: $(patsubst %.cc,%.o,$(wildcard replacement/lru/*.cc)) $(patsubst %.c,%.o,$(wildcard replacement/lru/*.c))
+	@mkdir -p $(dir $@)
+	ar -rcs $@ $^
+
+replacement/rdlru/%.o: CFLAGS += -Ireplacement/rdlru
+replacement/rdlru/%.o: CXXFLAGS += -Ireplacement/rdlru
+replacement/rdlru/%.o: CXXFLAGS +=  -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats
+obj/repl_rreplacementDrdlru.a: $(patsubst %.cc,%.o,$(wildcard replacement/rdlru/*.cc)) $(patsubst %.c,%.o,$(wildcard replacement/rdlru/*.c))
 	@mkdir -p $(dir $@)
 	ar -rcs $@ $^
 
@@ -70,6 +79,7 @@ obj/btb_bbtbDbasic_btb.a: $(patsubst %.cc,%.o,$(wildcard btb/basic_btb/*.cc)) $(
 
 -include $(wildcard src/*.d)
 -include $(wildcard replacement/lru/*.d)
+-include $(wildcard replacement/rdlru/*.d)
 -include $(wildcard prefetcher/no/*.d)
 -include $(wildcard prefetcher/no_instr/*.d)
 -include $(wildcard branch/bimodal/*.d)

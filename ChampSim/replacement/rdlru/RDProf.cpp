@@ -2,6 +2,7 @@
 // vim: set shiftwidth=4:
 // vim: set expandtab:
 
+#include "sampler.cpp"
 #include "RDProf.h"
 #include <atomic>
 #include <fstream>
@@ -99,25 +100,26 @@ void remove_all_expired(counter_t now) {
 
 //KNOB<std::string> KnobOutputFile(KNOB_MODE_WRITEONCE, "pintool", "o", "prof.out", "specify output file name");
 
-void init()
+void rdprof_init()
 {
     smpl = new Sampler;
 
-    profile = fopen(KnobOutputFile.Value().c_str(), "w");
+    profile = fopen("prof.out", "w");
     fprintf(profile, "Max Distance:\t%ld\tRefresh Period:\t%ld\tRPeriod Mask:\t%lx\n\n", MAX_DISTANCE, REFRESH_PERIOD, REFRESH_PERIOD_MSK);
 
 }
 
 
+/*
 // Is called for every instruction and instruments reads and writes
-VOID Instruction(INS ins, VOID *v)
+void Instruction(INS ins, VOID *v)
 {
     // Instruments memory accesses using a predicated call, i.e.
     // the instrumentation is called iff the instruction will actually be executed.
     //
     // On the IA-32 and Intel(R) 64 architectures conditional moves and REP 
     // prefixed instructions appear as predicated instructions in Pin.
-    UINT32 memOperands = INS_MemoryOperandCount(ins);
+    uint32_t memOperands = INS_MemoryOperandCount(ins);
 
     // Iterate over each memory operand of the instruction.
     for (UINT32 memOp = 0; memOp < memOperands; memOp++)
@@ -132,8 +134,10 @@ VOID Instruction(INS ins, VOID *v)
                 IARG_MEMORYOP_EA, memOp, IARG_UINT32, 0, IARG_THREAD_ID, IARG_END);
     }
 }
+*/
 
-VOID Fini(INT32 code, VOID *v)
+//VOID Fini(INT32 code, VOID *v)
+void rdprof_fini()
 {
     smpl->stats_print(profile, real_now());
 
@@ -148,10 +152,10 @@ VOID Fini(INT32 code, VOID *v)
 /* Print Help Message                                                    */
 /* ===================================================================== */
    
-INT32 Usage()
+int32_t Usage()
 {
-    PIN_ERROR( "This Pintool collects a reuse distance profile\n" 
-              + KNOB_BASE::StringKnobSummary() + "\n");
+    //PIN_ERROR( "This Pintool collects a reuse distance profile\n" + KNOB_BASE::StringKnobSummary() + "\n");
+    printf( "This Pintool collects a reuse distance profile\n" );
     return -1;
 }
 
@@ -161,16 +165,16 @@ INT32 Usage()
 
 int rdprof(int argc, char *argv[])
 {
-    if (PIN_Init(argc, argv)) return Usage();
+    //if (PIN_Init(argc, argv)) return Usage();
 
 
-    INS_AddInstrumentFunction(Instruction, 0);
-    PIN_AddFiniFunction(Fini, 0);
+    //INS_AddInstrumentFunction(Instruction, 0);
+    //PIN_AddFiniFunction(Fini, 0);
 
-    init();
+    //init();
 
-    // Never returns
-    PIN_StartProgram();
+    //// Never returns
+    //PIN_StartProgram();
     
     return 0;
 }
