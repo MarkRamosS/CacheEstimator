@@ -28,9 +28,9 @@ std::mutex glock;
 //                           SAMPLER INTERFACE
 //-----------------------------------------------------------------------------
 //VOID PIN_FAST_ANALYSIS_CALL update (VOID *addr, int is_read, int threadid) {
-void update (uint64_t *addr, int is_read, int threadid) {
+void update (uint64_t addr, int is_read, int threadid) {
     counter_t distance;
-    md_addr_t tag = GET_TAG((uint64_t)addr);
+    md_addr_t tag = GET_TAG(addr);
 
     now_lcl[threadid]++;
     if (early_return(tag, now_lcl[threadid]))
