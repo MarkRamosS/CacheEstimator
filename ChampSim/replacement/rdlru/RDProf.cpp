@@ -98,17 +98,22 @@ void rdprof_init()
     smpl = new Sampler;
 
     profile = fopen("prof.out", "w");
-    fprintf(profile, "Max Distance:\t%ld\tRefresh Period:\t%ld\tRPeriod Mask:\t%lx\n\n", MAX_DISTANCE, REFRESH_PERIOD, REFRESH_PERIOD_MSK);
+    fprintf(profile, "Max Distance:\t%ld\tRefresh Period:\t%ld\tRPeriod Mask:\t%lx\n\n", 
+            MAX_DISTANCE, REFRESH_PERIOD, REFRESH_PERIOD_MSK);
 
 }
+
 
 void rdprof_fini()
 {
     smpl->stats_print(profile, real_now());
 
+    printf("~~~~~~~~~~Reuse Distance Profiler output~~~~~~~~~~\n");
     for (int i = 0; i <= MAX_BUCKET; i++)
-        fprintf(profile, "%llu\t%llu\t%llu\n", GET_DISTANCE(i), SAMPLING_PERIOD * 1LLU * histogram[i],  SAMPLING_PERIOD * 1LLU * histogram_read[i]);
+        printf("%llu\t%llu\t%llu\n", GET_DISTANCE(i), 
+                SAMPLING_PERIOD * 1LLU * histogram[i],  SAMPLING_PERIOD * 1LLU * histogram_read[i]);
     fclose(profile);
+    printf("~~~~~~~~~~Reuse Distance Profiler output end~~~~~~~~~~\n");
 
     delete smpl;
 }
