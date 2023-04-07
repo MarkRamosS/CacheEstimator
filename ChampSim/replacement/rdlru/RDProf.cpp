@@ -77,7 +77,7 @@ void update_histogram(counter_t distance, int is_read) {
 }
 
 counter_t real_now() {
-    return std::reduce(now_lcl.begin(), now_lcl.end());
+    return std::accumulate(now_lcl.begin(), now_lcl.end(), 0.0);
 }
 
 void remove_all_expired(counter_t now) {
@@ -102,7 +102,6 @@ void rdprof_init()
             MAX_DISTANCE, REFRESH_PERIOD, REFRESH_PERIOD_MSK);
 
 }
-
 
 void rdprof_fini()
 {
