@@ -22,8 +22,8 @@ Initializing LRU.
 
 Warmup complete CPU 0 instructions: 1001 cycles: 313 (Simulation time: 0 hr 0 min 0 sec) 
 
-Heartbeat CPU 0 instructions: 10000003 cycles: 6239353 heartbeat IPC: 1.60273 cumulative IPC: 1.60265 (Simulation time: 0 hr 0 min 27 sec) 
-Finished CPU 0 instructions: 10000000 cycles: 6239428 cumulative IPC: 1.60271 (Simulation time: 0 hr 0 min 27 sec) 
+Heartbeat CPU 0 instructions: 10000003 cycles: 6239353 heartbeat IPC: 1.60273 cumulative IPC: 1.60265 (Simulation time: 0 hr 0 min 28 sec) 
+Finished CPU 0 instructions: 10000000 cycles: 6239428 cumulative IPC: 1.60271 (Simulation time: 0 hr 0 min 28 sec) 
 
 ChampSim completed all CPUs
 
