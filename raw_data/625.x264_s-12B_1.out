@@ -1,0 +1,1203 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 500000000
+Simulation Instructions: 1500000000
+Number of CPUs: 1
+Off-chip DRAM Size: 4 GiB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+VirtualMemory physical capacity: 8588881920 num_ppages: 2096895
+VirtualMemory page size: 4096 log2_page_size: 12
+
+CPU 0 runs traces/625.x264_s-12B.champsimtrace.xz
+CPU 0 Bimodal branch predictor
+Basic BTB sets: 1024 ways: 8 indirect buffer size: 4096 RAS size: 64
+Initializing LRU.
+Initializing LRU.
+Initializing LRU.
+Initializing LRU.
+Initializing rdLRU.
+Initializing LRU.
+Initializing LRU.
+Heartbeat CPU 0 instructions: 10000002 cycles: 2500088 heartbeat IPC: 3.99986 cumulative IPC: 3.99986 (Simulation time: 0 hr 0 min 34 sec) 
+Heartbeat CPU 0 instructions: 20000002 cycles: 5000088 heartbeat IPC: 4 cumulative IPC: 3.99993 (Simulation time: 0 hr 1 min 13 sec) 
+Heartbeat CPU 0 instructions: 30000002 cycles: 7500088 heartbeat IPC: 4 cumulative IPC: 3.99995 (Simulation time: 0 hr 1 min 56 sec) 
+Heartbeat CPU 0 instructions: 40000002 cycles: 10000088 heartbeat IPC: 4 cumulative IPC: 3.99996 (Simulation time: 0 hr 2 min 40 sec) 
+Heartbeat CPU 0 instructions: 50000002 cycles: 12500088 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 3 min 12 sec) 
+Heartbeat CPU 0 instructions: 60000002 cycles: 15000088 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 3 min 50 sec) 
+Heartbeat CPU 0 instructions: 70000002 cycles: 17500088 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 4 min 45 sec) 
+Heartbeat CPU 0 instructions: 80000002 cycles: 20000088 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 5 min 32 sec) 
+Heartbeat CPU 0 instructions: 90000002 cycles: 22500088 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 6 min 5 sec) 
+Heartbeat CPU 0 instructions: 100000002 cycles: 25000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 6 min 45 sec) 
+Heartbeat CPU 0 instructions: 110000002 cycles: 27500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 7 min 37 sec) 
+Heartbeat CPU 0 instructions: 120000002 cycles: 30000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 8 min 31 sec) 
+Heartbeat CPU 0 instructions: 130000002 cycles: 32500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 9 min 8 sec) 
+Heartbeat CPU 0 instructions: 140000002 cycles: 35000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 9 min 43 sec) 
+Heartbeat CPU 0 instructions: 150000002 cycles: 37500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 10 min 15 sec) 
+Heartbeat CPU 0 instructions: 160000002 cycles: 40000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 10 min 47 sec) 
+Heartbeat CPU 0 instructions: 170000002 cycles: 42500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 11 min 19 sec) 
+Heartbeat CPU 0 instructions: 180000002 cycles: 45000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 11 min 51 sec) 
+Heartbeat CPU 0 instructions: 190000002 cycles: 47500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 12 min 25 sec) 
+Heartbeat CPU 0 instructions: 200000002 cycles: 50000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 12 min 57 sec) 
+Heartbeat CPU 0 instructions: 210000002 cycles: 52500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 13 min 29 sec) 
+Heartbeat CPU 0 instructions: 220000002 cycles: 55000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 14 min 2 sec) 
+Heartbeat CPU 0 instructions: 230000002 cycles: 57500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 14 min 36 sec) 
+Heartbeat CPU 0 instructions: 240000002 cycles: 60000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 15 min 10 sec) 
+Heartbeat CPU 0 instructions: 250000002 cycles: 62500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 15 min 44 sec) 
+Heartbeat CPU 0 instructions: 260000002 cycles: 65000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 16 min 18 sec) 
+Heartbeat CPU 0 instructions: 270000002 cycles: 67500088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 17 min 6 sec) 
+Heartbeat CPU 0 instructions: 280000002 cycles: 70000088 heartbeat IPC: 4 cumulative IPC: 3.99999 (Simulation time: 0 hr 18 min 1 sec) 
+Heartbeat CPU 0 instructions: 290000000 cycles: 72500496 heartbeat IPC: 3.99935 cumulative IPC: 3.99997 (Simulation time: 0 hr 18 min 56 sec) 
+Heartbeat CPU 0 instructions: 300000000 cycles: 75000496 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 19 min 51 sec) 
+Heartbeat CPU 0 instructions: 310000000 cycles: 77500496 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 20 min 42 sec) 
+Heartbeat CPU 0 instructions: 320000000 cycles: 80000496 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 21 min 33 sec) 
+Heartbeat CPU 0 instructions: 330000000 cycles: 82500496 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 22 min 14 sec) 
+Heartbeat CPU 0 instructions: 340000000 cycles: 85000496 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 23 min 1 sec) 
+Heartbeat CPU 0 instructions: 350000000 cycles: 87500496 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 23 min 38 sec) 
+Heartbeat CPU 0 instructions: 360000000 cycles: 90000496 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 24 min 15 sec) 
+Heartbeat CPU 0 instructions: 370000001 cycles: 92500664 heartbeat IPC: 3.99973 cumulative IPC: 3.99997 (Simulation time: 0 hr 25 min 0 sec) 
+Heartbeat CPU 0 instructions: 380000001 cycles: 95000664 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 25 min 44 sec) 
+Heartbeat CPU 0 instructions: 390000001 cycles: 97500664 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 26 min 39 sec) 
+Heartbeat CPU 0 instructions: 400000001 cycles: 100000664 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 27 min 35 sec) 
+Heartbeat CPU 0 instructions: 410000001 cycles: 102500664 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 28 min 30 sec) 
+Heartbeat CPU 0 instructions: 420000001 cycles: 105000664 heartbeat IPC: 4 cumulative IPC: 3.99997 (Simulation time: 0 hr 29 min 26 sec) 
+Heartbeat CPU 0 instructions: 430000001 cycles: 107500664 heartbeat IPC: 4 cumulative IPC: 3.99998 (Simulation time: 0 hr 30 min 21 sec) 
+Heartbeat CPU 0 instructions: 440000000 cycles: 110000803 heartbeat IPC: 3.99978 cumulative IPC: 3.99997 (Simulation time: 0 hr 31 min 17 sec) 
+Heartbeat CPU 0 instructions: 450000003 cycles: 112520388 heartbeat IPC: 3.96891 cumulative IPC: 3.99928 (Simulation time: 0 hr 32 min 14 sec) 
+Heartbeat CPU 0 instructions: 460000002 cycles: 115044567 heartbeat IPC: 3.96168 cumulative IPC: 3.99845 (Simulation time: 0 hr 33 min 6 sec) 
+Heartbeat CPU 0 instructions: 470000002 cycles: 117544567 heartbeat IPC: 4 cumulative IPC: 3.99848 (Simulation time: 0 hr 33 min 40 sec) 
+Heartbeat CPU 0 instructions: 480000004 cycles: 120048173 heartbeat IPC: 3.99424 cumulative IPC: 3.99839 (Simulation time: 0 hr 34 min 10 sec) 
+Heartbeat CPU 0 instructions: 490000003 cycles: 122593415 heartbeat IPC: 3.9289 cumulative IPC: 3.99695 (Simulation time: 0 hr 34 min 40 sec) 
+Heartbeat CPU 0 instructions: 500000000 cycles: 125122247 heartbeat IPC: 3.95439 cumulative IPC: 3.99609 (Simulation time: 0 hr 35 min 10 sec) 
+
+Warmup complete CPU 0 instructions: 500000004 cycles: 125122248 (Simulation time: 0 hr 35 min 10 sec) 
+
+Heartbeat CPU 0 instructions: 510000001 cycles: 128847995 heartbeat IPC: 2.68403 cumulative IPC: 2.68402 (Simulation time: 0 hr 35 min 40 sec) 
+Heartbeat CPU 0 instructions: 520000004 cycles: 132620112 heartbeat IPC: 2.65103 cumulative IPC: 2.66743 (Simulation time: 0 hr 36 min 12 sec) 
+Heartbeat CPU 0 instructions: 530000001 cycles: 136428008 heartbeat IPC: 2.62612 cumulative IPC: 2.65351 (Simulation time: 0 hr 36 min 59 sec) 
+Heartbeat CPU 0 instructions: 540000001 cycles: 140259508 heartbeat IPC: 2.60994 cumulative IPC: 2.64249 (Simulation time: 0 hr 37 min 29 sec) 
+Heartbeat CPU 0 instructions: 550000001 cycles: 143955782 heartbeat IPC: 2.70543 cumulative IPC: 2.65484 (Simulation time: 0 hr 38 min 0 sec) 
+Heartbeat CPU 0 instructions: 560000001 cycles: 147795976 heartbeat IPC: 2.60404 cumulative IPC: 2.64623 (Simulation time: 0 hr 38 min 44 sec) 
+Heartbeat CPU 0 instructions: 570000000 cycles: 151622049 heartbeat IPC: 2.61365 cumulative IPC: 2.64153 (Simulation time: 0 hr 39 min 40 sec) 
+Heartbeat CPU 0 instructions: 580000000 cycles: 155384005 heartbeat IPC: 2.65819 cumulative IPC: 2.6436 (Simulation time: 0 hr 40 min 35 sec) 
+Heartbeat CPU 0 instructions: 590000000 cycles: 159231302 heartbeat IPC: 2.59923 cumulative IPC: 2.6386 (Simulation time: 0 hr 41 min 27 sec) 
+Heartbeat CPU 0 instructions: 600000000 cycles: 163046656 heartbeat IPC: 2.62099 cumulative IPC: 2.63682 (Simulation time: 0 hr 42 min 22 sec) 
+Heartbeat CPU 0 instructions: 610000001 cycles: 166834952 heartbeat IPC: 2.63971 cumulative IPC: 2.63709 (Simulation time: 0 hr 43 min 16 sec) 
+Heartbeat CPU 0 instructions: 620000002 cycles: 170649050 heartbeat IPC: 2.62185 cumulative IPC: 2.63581 (Simulation time: 0 hr 44 min 11 sec) 
+Heartbeat CPU 0 instructions: 630000004 cycles: 174389906 heartbeat IPC: 2.67319 cumulative IPC: 2.63865 (Simulation time: 0 hr 45 min 6 sec) 
+Heartbeat CPU 0 instructions: 640000004 cycles: 178249993 heartbeat IPC: 2.59062 cumulative IPC: 2.63516 (Simulation time: 0 hr 45 min 40 sec) 
+Heartbeat CPU 0 instructions: 650000002 cycles: 182048501 heartbeat IPC: 2.63261 cumulative IPC: 2.63499 (Simulation time: 0 hr 46 min 11 sec) 
+Heartbeat CPU 0 instructions: 660000002 cycles: 185774352 heartbeat IPC: 2.68395 cumulative IPC: 2.638 (Simulation time: 0 hr 46 min 54 sec) 
+Heartbeat CPU 0 instructions: 670000003 cycles: 197660224 heartbeat IPC: 0.841335 cumulative IPC: 2.3436 (Simulation time: 0 hr 49 min 12 sec) 
+Heartbeat CPU 0 instructions: 680000003 cycles: 201745351 heartbeat IPC: 2.4479 cumulative IPC: 2.34916 (Simulation time: 0 hr 50 min 25 sec) 
+Heartbeat CPU 0 instructions: 690000001 cycles: 206357371 heartbeat IPC: 2.16825 cumulative IPC: 2.33889 (Simulation time: 0 hr 51 min 15 sec) 
+Heartbeat CPU 0 instructions: 700000001 cycles: 210658568 heartbeat IPC: 2.32493 cumulative IPC: 2.33819 (Simulation time: 0 hr 51 min 49 sec) 
+Heartbeat CPU 0 instructions: 710000000 cycles: 214389129 heartbeat IPC: 2.68056 cumulative IPC: 2.3525 (Simulation time: 0 hr 52 min 43 sec) 
+Heartbeat CPU 0 instructions: 720000000 cycles: 218019659 heartbeat IPC: 2.75442 cumulative IPC: 2.3682 (Simulation time: 0 hr 53 min 23 sec) 
+Heartbeat CPU 0 instructions: 730000001 cycles: 221791676 heartbeat IPC: 2.6511 cumulative IPC: 2.37924 (Simulation time: 0 hr 54 min 10 sec) 
+Heartbeat CPU 0 instructions: 740000000 cycles: 225497761 heartbeat IPC: 2.69826 cumulative IPC: 2.39102 (Simulation time: 0 hr 55 min 6 sec) 
+Heartbeat CPU 0 instructions: 750000000 cycles: 229192719 heartbeat IPC: 2.70639 cumulative IPC: 2.40222 (Simulation time: 0 hr 55 min 50 sec) 
+Heartbeat CPU 0 instructions: 760000002 cycles: 233027600 heartbeat IPC: 2.60764 cumulative IPC: 2.40952 (Simulation time: 0 hr 56 min 28 sec) 
+Heartbeat CPU 0 instructions: 770000000 cycles: 236743210 heartbeat IPC: 2.69135 cumulative IPC: 2.4189 (Simulation time: 0 hr 57 min 28 sec) 
+Heartbeat CPU 0 instructions: 780000003 cycles: 240401543 heartbeat IPC: 2.73349 cumulative IPC: 2.42888 (Simulation time: 0 hr 58 min 28 sec) 
+Heartbeat CPU 0 instructions: 790000002 cycles: 244191660 heartbeat IPC: 2.63844 cumulative IPC: 2.43555 (Simulation time: 0 hr 59 min 26 sec) 
+Heartbeat CPU 0 instructions: 800000001 cycles: 247970864 heartbeat IPC: 2.64606 cumulative IPC: 2.44203 (Simulation time: 1 hr 0 min 27 sec) 
+Heartbeat CPU 0 instructions: 810000003 cycles: 251764852 heartbeat IPC: 2.63575 cumulative IPC: 2.44783 (Simulation time: 1 hr 1 min 27 sec) 
+Heartbeat CPU 0 instructions: 820000001 cycles: 255528459 heartbeat IPC: 2.65703 cumulative IPC: 2.45387 (Simulation time: 1 hr 2 min 11 sec) 
+Heartbeat CPU 0 instructions: 830000001 cycles: 267048226 heartbeat IPC: 0.868073 cumulative IPC: 2.32516 (Simulation time: 1 hr 4 min 24 sec) 
+Heartbeat CPU 0 instructions: 840000002 cycles: 271085878 heartbeat IPC: 2.47669 cumulative IPC: 2.32935 (Simulation time: 1 hr 5 min 57 sec) 
+Heartbeat CPU 0 instructions: 850000000 cycles: 275714181 heartbeat IPC: 2.16062 cumulative IPC: 2.32416 (Simulation time: 1 hr 7 min 20 sec) 
+Heartbeat CPU 0 instructions: 860000001 cycles: 280083165 heartbeat IPC: 2.28886 cumulative IPC: 2.32317 (Simulation time: 1 hr 8 min 2 sec) 
+Heartbeat CPU 0 instructions: 870000004 cycles: 284248337 heartbeat IPC: 2.40086 cumulative IPC: 2.3252 (Simulation time: 1 hr 8 min 39 sec) 
+Heartbeat CPU 0 instructions: 880000002 cycles: 288439740 heartbeat IPC: 2.38584 cumulative IPC: 2.32676 (Simulation time: 1 hr 9 min 16 sec) 
+Heartbeat CPU 0 instructions: 890000002 cycles: 292679216 heartbeat IPC: 2.35878 cumulative IPC: 2.32757 (Simulation time: 1 hr 9 min 57 sec) 
+Heartbeat CPU 0 instructions: 900000000 cycles: 296868953 heartbeat IPC: 2.38678 cumulative IPC: 2.32901 (Simulation time: 1 hr 10 min 47 sec) 
+Heartbeat CPU 0 instructions: 910000004 cycles: 301042174 heartbeat IPC: 2.39623 cumulative IPC: 2.33061 (Simulation time: 1 hr 11 min 52 sec) 
+Heartbeat CPU 0 instructions: 920000001 cycles: 305223561 heartbeat IPC: 2.39155 cumulative IPC: 2.33202 (Simulation time: 1 hr 12 min 54 sec) 
+Heartbeat CPU 0 instructions: 930000000 cycles: 316930726 heartbeat IPC: 0.854178 cumulative IPC: 2.24182 (Simulation time: 1 hr 14 min 13 sec) 
+Heartbeat CPU 0 instructions: 940000001 cycles: 320623236 heartbeat IPC: 2.70819 cumulative IPC: 2.25063 (Simulation time: 1 hr 16 min 14 sec) 
+Heartbeat CPU 0 instructions: 950000003 cycles: 325554265 heartbeat IPC: 2.02797 cumulative IPC: 2.24515 (Simulation time: 1 hr 17 min 14 sec) 
+Heartbeat CPU 0 instructions: 960000001 cycles: 329739274 heartbeat IPC: 2.38948 cumulative IPC: 2.2481 (Simulation time: 1 hr 18 min 15 sec) 
+Heartbeat CPU 0 instructions: 970000002 cycles: 333929166 heartbeat IPC: 2.3867 cumulative IPC: 2.25088 (Simulation time: 1 hr 19 min 24 sec) 
+Heartbeat CPU 0 instructions: 980000001 cycles: 338120022 heartbeat IPC: 2.38615 cumulative IPC: 2.25354 (Simulation time: 1 hr 20 min 14 sec) 
+Heartbeat CPU 0 instructions: 990000003 cycles: 342312505 heartbeat IPC: 2.38522 cumulative IPC: 2.25609 (Simulation time: 1 hr 20 min 59 sec) 
+Heartbeat CPU 0 instructions: 1000000001 cycles: 346503035 heartbeat IPC: 2.38633 cumulative IPC: 2.25855 (Simulation time: 1 hr 21 min 38 sec) 
+Heartbeat CPU 0 instructions: 1010000004 cycles: 350694124 heartbeat IPC: 2.38602 cumulative IPC: 2.26092 (Simulation time: 1 hr 22 min 16 sec) 
+Heartbeat CPU 0 instructions: 1020000002 cycles: 354928999 heartbeat IPC: 2.36134 cumulative IPC: 2.26277 (Simulation time: 1 hr 23 min 13 sec) 
+Heartbeat CPU 0 instructions: 1030000002 cycles: 366406316 heartbeat IPC: 0.871284 cumulative IPC: 2.19658 (Simulation time: 1 hr 25 min 3 sec) 
+Heartbeat CPU 0 instructions: 1040000001 cycles: 370605439 heartbeat IPC: 2.38145 cumulative IPC: 2.19974 (Simulation time: 1 hr 26 min 41 sec) 
+Heartbeat CPU 0 instructions: 1050000000 cycles: 374583306 heartbeat IPC: 2.51391 cumulative IPC: 2.20475 (Simulation time: 1 hr 27 min 24 sec) 
+Heartbeat CPU 0 instructions: 1060000001 cycles: 377868547 heartbeat IPC: 3.04392 cumulative IPC: 2.21566 (Simulation time: 1 hr 28 min 18 sec) 
+Heartbeat CPU 0 instructions: 1070000002 cycles: 381152989 heartbeat IPC: 3.04466 cumulative IPC: 2.2263 (Simulation time: 1 hr 28 min 53 sec) 
+Heartbeat CPU 0 instructions: 1080000003 cycles: 384438490 heartbeat IPC: 3.04368 cumulative IPC: 2.23665 (Simulation time: 1 hr 29 min 41 sec) 
+Heartbeat CPU 0 instructions: 1090000001 cycles: 387855572 heartbeat IPC: 2.92647 cumulative IPC: 2.24562 (Simulation time: 1 hr 30 min 35 sec) 
+Heartbeat CPU 0 instructions: 1100000004 cycles: 391364559 heartbeat IPC: 2.84983 cumulative IPC: 2.25359 (Simulation time: 1 hr 31 min 21 sec) 
+Heartbeat CPU 0 instructions: 1110000004 cycles: 395496110 heartbeat IPC: 2.4204 cumulative IPC: 2.25614 (Simulation time: 1 hr 32 min 14 sec) 
+Heartbeat CPU 0 instructions: 1120000001 cycles: 399642893 heartbeat IPC: 2.41151 cumulative IPC: 2.25848 (Simulation time: 1 hr 33 min 0 sec) 
+Heartbeat CPU 0 instructions: 1130000004 cycles: 403794846 heartbeat IPC: 2.40851 cumulative IPC: 2.26072 (Simulation time: 1 hr 33 min 40 sec) 
+Heartbeat CPU 0 instructions: 1140000003 cycles: 407932773 heartbeat IPC: 2.41667 cumulative IPC: 2.263 (Simulation time: 1 hr 34 min 9 sec) 
+Heartbeat CPU 0 instructions: 1150000004 cycles: 412071015 heartbeat IPC: 2.41649 cumulative IPC: 2.26521 (Simulation time: 1 hr 34 min 47 sec) 
+Heartbeat CPU 0 instructions: 1160000003 cycles: 416206059 heartbeat IPC: 2.41835 cumulative IPC: 2.26739 (Simulation time: 1 hr 35 min 38 sec) 
+Heartbeat CPU 0 instructions: 1170000002 cycles: 419510033 heartbeat IPC: 3.02666 cumulative IPC: 2.27591 (Simulation time: 1 hr 36 min 19 sec) 
+Heartbeat CPU 0 instructions: 1180000002 cycles: 422791211 heartbeat IPC: 3.04769 cumulative IPC: 2.28442 (Simulation time: 1 hr 37 min 13 sec) 
+Heartbeat CPU 0 instructions: 1190000001 cycles: 426072339 heartbeat IPC: 3.04773 cumulative IPC: 2.29274 (Simulation time: 1 hr 38 min 6 sec) 
+Heartbeat CPU 0 instructions: 1200000004 cycles: 429369527 heartbeat IPC: 3.03289 cumulative IPC: 2.30076 (Simulation time: 1 hr 38 min 59 sec) 
+Heartbeat CPU 0 instructions: 1210000002 cycles: 432553052 heartbeat IPC: 3.14117 cumulative IPC: 2.30946 (Simulation time: 1 hr 39 min 53 sec) 
+Heartbeat CPU 0 instructions: 1220000003 cycles: 436377547 heartbeat IPC: 2.61472 cumulative IPC: 2.31321 (Simulation time: 1 hr 40 min 46 sec) 
+Heartbeat CPU 0 instructions: 1230000003 cycles: 440459415 heartbeat IPC: 2.44986 cumulative IPC: 2.31498 (Simulation time: 1 hr 41 min 37 sec) 
+Heartbeat CPU 0 instructions: 1240000002 cycles: 444566524 heartbeat IPC: 2.4348 cumulative IPC: 2.31652 (Simulation time: 1 hr 42 min 29 sec) 
+Heartbeat CPU 0 instructions: 1250000004 cycles: 448668513 heartbeat IPC: 2.43784 cumulative IPC: 2.31806 (Simulation time: 1 hr 43 min 18 sec) 
+Heartbeat CPU 0 instructions: 1260000004 cycles: 452752375 heartbeat IPC: 2.44866 cumulative IPC: 2.31969 (Simulation time: 1 hr 44 min 1 sec) 
+Heartbeat CPU 0 instructions: 1270000004 cycles: 456839884 heartbeat IPC: 2.44648 cumulative IPC: 2.32125 (Simulation time: 1 hr 44 min 48 sec) 
+Heartbeat CPU 0 instructions: 1280000002 cycles: 460894504 heartbeat IPC: 2.46632 cumulative IPC: 2.323 (Simulation time: 1 hr 45 min 22 sec) 
+Heartbeat CPU 0 instructions: 1290000002 cycles: 464214149 heartbeat IPC: 3.01237 cumulative IPC: 2.32975 (Simulation time: 1 hr 46 min 2 sec) 
+Heartbeat CPU 0 instructions: 1300000004 cycles: 467496369 heartbeat IPC: 3.04672 cumulative IPC: 2.33663 (Simulation time: 1 hr 46 min 44 sec) 
+Heartbeat CPU 0 instructions: 1310000004 cycles: 470778403 heartbeat IPC: 3.04689 cumulative IPC: 2.34337 (Simulation time: 1 hr 47 min 38 sec) 
+Heartbeat CPU 0 instructions: 1320000003 cycles: 474079553 heartbeat IPC: 3.02925 cumulative IPC: 2.34986 (Simulation time: 1 hr 48 min 31 sec) 
+Heartbeat CPU 0 instructions: 1330000002 cycles: 477527456 heartbeat IPC: 2.90031 cumulative IPC: 2.35524 (Simulation time: 1 hr 49 min 1 sec) 
+Heartbeat CPU 0 instructions: 1340000002 cycles: 481558135 heartbeat IPC: 2.48097 cumulative IPC: 2.35667 (Simulation time: 1 hr 49 min 45 sec) 
+Heartbeat CPU 0 instructions: 1350000000 cycles: 485709700 heartbeat IPC: 2.40873 cumulative IPC: 2.35726 (Simulation time: 1 hr 50 min 31 sec) 
+Heartbeat CPU 0 instructions: 1360000002 cycles: 489883579 heartbeat IPC: 2.39585 cumulative IPC: 2.35771 (Simulation time: 1 hr 51 min 17 sec) 
+Heartbeat CPU 0 instructions: 1370000004 cycles: 494008700 heartbeat IPC: 2.42417 cumulative IPC: 2.35845 (Simulation time: 1 hr 51 min 57 sec) 
+Heartbeat CPU 0 instructions: 1380000002 cycles: 498133469 heartbeat IPC: 2.42438 cumulative IPC: 2.35918 (Simulation time: 1 hr 52 min 29 sec) 
+Heartbeat CPU 0 instructions: 1390000002 cycles: 502243637 heartbeat IPC: 2.43299 cumulative IPC: 2.35998 (Simulation time: 1 hr 53 min 13 sec) 
+Heartbeat CPU 0 instructions: 1400000000 cycles: 506348545 heartbeat IPC: 2.43611 cumulative IPC: 2.3608 (Simulation time: 1 hr 54 min 6 sec) 
+Heartbeat CPU 0 instructions: 1410000001 cycles: 510506305 heartbeat IPC: 2.40514 cumulative IPC: 2.36128 (Simulation time: 1 hr 54 min 49 sec) 
+Heartbeat CPU 0 instructions: 1420000001 cycles: 514655803 heartbeat IPC: 2.40993 cumulative IPC: 2.3618 (Simulation time: 1 hr 55 min 39 sec) 
+Heartbeat CPU 0 instructions: 1430000004 cycles: 518810250 heartbeat IPC: 2.40706 cumulative IPC: 2.36228 (Simulation time: 1 hr 56 min 10 sec) 
+Heartbeat CPU 0 instructions: 1440000003 cycles: 523027178 heartbeat IPC: 2.37139 cumulative IPC: 2.36237 (Simulation time: 1 hr 56 min 51 sec) 
+Heartbeat CPU 0 instructions: 1450000000 cycles: 527193444 heartbeat IPC: 2.40023 cumulative IPC: 2.36277 (Simulation time: 1 hr 57 min 25 sec) 
+Heartbeat CPU 0 instructions: 1460000004 cycles: 531359877 heartbeat IPC: 2.40014 cumulative IPC: 2.36315 (Simulation time: 1 hr 57 min 54 sec) 
+Heartbeat CPU 0 instructions: 1470000001 cycles: 535528458 heartbeat IPC: 2.3989 cumulative IPC: 2.36351 (Simulation time: 1 hr 58 min 23 sec) 
+Heartbeat CPU 0 instructions: 1480000000 cycles: 539705383 heartbeat IPC: 2.39411 cumulative IPC: 2.36382 (Simulation time: 1 hr 58 min 52 sec) 
+Heartbeat CPU 0 instructions: 1490000001 cycles: 543851251 heartbeat IPC: 2.41204 cumulative IPC: 2.3643 (Simulation time: 1 hr 59 min 21 sec) 
+Heartbeat CPU 0 instructions: 1500000000 cycles: 547997353 heartbeat IPC: 2.4119 cumulative IPC: 2.36476 (Simulation time: 1 hr 59 min 50 sec) 
+Heartbeat CPU 0 instructions: 1510000003 cycles: 552127576 heartbeat IPC: 2.42118 cumulative IPC: 2.36531 (Simulation time: 2 hr 0 min 20 sec) 
+Heartbeat CPU 0 instructions: 1520000003 cycles: 556225063 heartbeat IPC: 2.44052 cumulative IPC: 2.36602 (Simulation time: 2 hr 0 min 58 sec) 
+Heartbeat CPU 0 instructions: 1530000000 cycles: 560284425 heartbeat IPC: 2.46344 cumulative IPC: 2.36693 (Simulation time: 2 hr 1 min 30 sec) 
+Heartbeat CPU 0 instructions: 1540000001 cycles: 563550028 heartbeat IPC: 3.06222 cumulative IPC: 2.37211 (Simulation time: 2 hr 2 min 16 sec) 
+Heartbeat CPU 0 instructions: 1550000000 cycles: 567180685 heartbeat IPC: 2.75432 cumulative IPC: 2.37525 (Simulation time: 2 hr 3 min 10 sec) 
+Heartbeat CPU 0 instructions: 1560000004 cycles: 571340129 heartbeat IPC: 2.40417 cumulative IPC: 2.37552 (Simulation time: 2 hr 3 min 49 sec) 
+Heartbeat CPU 0 instructions: 1570000002 cycles: 575526081 heartbeat IPC: 2.38894 cumulative IPC: 2.37565 (Simulation time: 2 hr 4 min 41 sec) 
+Heartbeat CPU 0 instructions: 1580000003 cycles: 579678381 heartbeat IPC: 2.4083 cumulative IPC: 2.37594 (Simulation time: 2 hr 5 min 34 sec) 
+Heartbeat CPU 0 instructions: 1590000001 cycles: 583813451 heartbeat IPC: 2.41834 cumulative IPC: 2.37633 (Simulation time: 2 hr 6 min 26 sec) 
+Heartbeat CPU 0 instructions: 1600000000 cycles: 587937654 heartbeat IPC: 2.42471 cumulative IPC: 2.37676 (Simulation time: 2 hr 7 min 19 sec) 
+Heartbeat CPU 0 instructions: 1610000004 cycles: 591625295 heartbeat IPC: 2.71176 cumulative IPC: 2.37941 (Simulation time: 2 hr 8 min 12 sec) 
+Heartbeat CPU 0 instructions: 1620000003 cycles: 594906224 heartbeat IPC: 3.04792 cumulative IPC: 2.38407 (Simulation time: 2 hr 8 min 46 sec) 
+Heartbeat CPU 0 instructions: 1630000001 cycles: 598187809 heartbeat IPC: 3.04731 cumulative IPC: 2.38868 (Simulation time: 2 hr 9 min 17 sec) 
+Heartbeat CPU 0 instructions: 1640000000 cycles: 601469108 heartbeat IPC: 3.04757 cumulative IPC: 2.39321 (Simulation time: 2 hr 9 min 53 sec) 
+Heartbeat CPU 0 instructions: 1650000004 cycles: 604926209 heartbeat IPC: 2.8926 cumulative IPC: 2.39681 (Simulation time: 2 hr 10 min 26 sec) 
+Heartbeat CPU 0 instructions: 1660000000 cycles: 608675958 heartbeat IPC: 2.66684 cumulative IPC: 2.39891 (Simulation time: 2 hr 10 min 57 sec) 
+Heartbeat CPU 0 instructions: 1670000000 cycles: 612799517 heartbeat IPC: 2.42509 cumulative IPC: 2.39913 (Simulation time: 2 hr 11 min 27 sec) 
+Heartbeat CPU 0 instructions: 1680000003 cycles: 616977923 heartbeat IPC: 2.39326 cumulative IPC: 2.39908 (Simulation time: 2 hr 11 min 57 sec) 
+Heartbeat CPU 0 instructions: 1690000000 cycles: 621124617 heartbeat IPC: 2.41156 cumulative IPC: 2.39918 (Simulation time: 2 hr 12 min 27 sec) 
+Heartbeat CPU 0 instructions: 1700000002 cycles: 625237799 heartbeat IPC: 2.43121 cumulative IPC: 2.39945 (Simulation time: 2 hr 12 min 57 sec) 
+Heartbeat CPU 0 instructions: 1710000000 cycles: 629348440 heartbeat IPC: 2.43271 cumulative IPC: 2.39972 (Simulation time: 2 hr 13 min 27 sec) 
+Heartbeat CPU 0 instructions: 1720000001 cycles: 633444748 heartbeat IPC: 2.44122 cumulative IPC: 2.40005 (Simulation time: 2 hr 13 min 57 sec) 
+Heartbeat CPU 0 instructions: 1730000004 cycles: 637736348 heartbeat IPC: 2.33013 cumulative IPC: 2.39947 (Simulation time: 2 hr 14 min 32 sec) 
+Heartbeat CPU 0 instructions: 1740000004 cycles: 641935251 heartbeat IPC: 2.38157 cumulative IPC: 2.39932 (Simulation time: 2 hr 15 min 2 sec) 
+Heartbeat CPU 0 instructions: 1750000004 cycles: 646151585 heartbeat IPC: 2.37173 cumulative IPC: 2.3991 (Simulation time: 2 hr 15 min 33 sec) 
+Heartbeat CPU 0 instructions: 1760000001 cycles: 650371041 heartbeat IPC: 2.36997 cumulative IPC: 2.39886 (Simulation time: 2 hr 16 min 15 sec) 
+Heartbeat CPU 0 instructions: 1770000002 cycles: 654598037 heartbeat IPC: 2.36575 cumulative IPC: 2.3986 (Simulation time: 2 hr 17 min 7 sec) 
+Heartbeat CPU 0 instructions: 1780000003 cycles: 658804627 heartbeat IPC: 2.37722 cumulative IPC: 2.39843 (Simulation time: 2 hr 18 min 0 sec) 
+Heartbeat CPU 0 instructions: 1790000002 cycles: 662972514 heartbeat IPC: 2.3993 cumulative IPC: 2.39844 (Simulation time: 2 hr 18 min 40 sec) 
+Heartbeat CPU 0 instructions: 1800000004 cycles: 667151009 heartbeat IPC: 2.39321 cumulative IPC: 2.3984 (Simulation time: 2 hr 19 min 9 sec) 
+Heartbeat CPU 0 instructions: 1810000003 cycles: 671358222 heartbeat IPC: 2.37687 cumulative IPC: 2.39823 (Simulation time: 2 hr 19 min 39 sec) 
+Heartbeat CPU 0 instructions: 1820000000 cycles: 675537397 heartbeat IPC: 2.39282 cumulative IPC: 2.39819 (Simulation time: 2 hr 20 min 9 sec) 
+Heartbeat CPU 0 instructions: 1830000002 cycles: 679727442 heartbeat IPC: 2.38661 cumulative IPC: 2.3981 (Simulation time: 2 hr 20 min 38 sec) 
+Heartbeat CPU 0 instructions: 1840000000 cycles: 683930081 heartbeat IPC: 2.37946 cumulative IPC: 2.39796 (Simulation time: 2 hr 21 min 8 sec) 
+Heartbeat CPU 0 instructions: 1850000002 cycles: 688079565 heartbeat IPC: 2.40994 cumulative IPC: 2.39805 (Simulation time: 2 hr 21 min 54 sec) 
+Heartbeat CPU 0 instructions: 1860000000 cycles: 692191419 heartbeat IPC: 2.43199 cumulative IPC: 2.3983 (Simulation time: 2 hr 22 min 47 sec) 
+Heartbeat CPU 0 instructions: 1870000002 cycles: 696345622 heartbeat IPC: 2.4072 cumulative IPC: 2.39836 (Simulation time: 2 hr 23 min 40 sec) 
+Heartbeat CPU 0 instructions: 1880000003 cycles: 700521986 heartbeat IPC: 2.39443 cumulative IPC: 2.39833 (Simulation time: 2 hr 24 min 33 sec) 
+Heartbeat CPU 0 instructions: 1890000002 cycles: 704659931 heartbeat IPC: 2.41666 cumulative IPC: 2.39846 (Simulation time: 2 hr 25 min 25 sec) 
+Heartbeat CPU 0 instructions: 1900000004 cycles: 708799202 heartbeat IPC: 2.41588 cumulative IPC: 2.39859 (Simulation time: 2 hr 25 min 58 sec) 
+Heartbeat CPU 0 instructions: 1910000000 cycles: 712962769 heartbeat IPC: 2.40179 cumulative IPC: 2.39861 (Simulation time: 2 hr 26 min 32 sec) 
+Heartbeat CPU 0 instructions: 1920000001 cycles: 717063672 heartbeat IPC: 2.43849 cumulative IPC: 2.39889 (Simulation time: 2 hr 27 min 18 sec) 
+Heartbeat CPU 0 instructions: 1930000002 cycles: 726680393 heartbeat IPC: 1.03986 cumulative IPC: 2.37716 (Simulation time: 2 hr 28 min 27 sec) 
+Heartbeat CPU 0 instructions: 1940000001 cycles: 732987145 heartbeat IPC: 1.5856 cumulative IPC: 2.36895 (Simulation time: 2 hr 29 min 15 sec) 
+Heartbeat CPU 0 instructions: 1950000002 cycles: 737008889 heartbeat IPC: 2.48648 cumulative IPC: 2.36972 (Simulation time: 2 hr 29 min 45 sec) 
+Heartbeat CPU 0 instructions: 1960000002 cycles: 740887718 heartbeat IPC: 2.5781 cumulative IPC: 2.37103 (Simulation time: 2 hr 30 min 14 sec) 
+Heartbeat CPU 0 instructions: 1970000003 cycles: 744876469 heartbeat IPC: 2.50705 cumulative IPC: 2.37191 (Simulation time: 2 hr 30 min 44 sec) 
+Heartbeat CPU 0 instructions: 1980000004 cycles: 748729142 heartbeat IPC: 2.5956 cumulative IPC: 2.37329 (Simulation time: 2 hr 31 min 14 sec) 
+Heartbeat CPU 0 instructions: 1990000002 cycles: 752743951 heartbeat IPC: 2.49078 cumulative IPC: 2.37404 (Simulation time: 2 hr 31 min 44 sec) 
+*** Reached end of trace: traces/625.x264_s-12B.champsimtrace.xz
+Heartbeat CPU 0 instructions: 2000000001 cycles: 756605529 heartbeat IPC: 2.58961 cumulative IPC: 2.37536 (Simulation time: 2 hr 32 min 13 sec) 
+Finished CPU 0 instructions: 1500000000 cycles: 631483694 cumulative IPC: 2.37536 (Simulation time: 2 hr 32 min 13 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 2.37536 instructions: 1500000000 cycles: 631483694
+cpu0_DTLB TOTAL     ACCESS:  180720661  HIT:  179533318  MISS:    1187343
+cpu0_DTLB LOAD      ACCESS:  131601087  HIT:  130810633  MISS:     790454
+cpu0_DTLB RFO       ACCESS:   49119574  HIT:   48722685  MISS:     396889
+cpu0_DTLB PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_DTLB WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+cpu0_DTLB TRANSLATION ACCESS:          0  HIT:          0  MISS:          0
+cpu0_DTLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_DTLB AVERAGE MISS LATENCY: 11.3207 cycles
+cpu0_ITLB TOTAL     ACCESS:  103898740  HIT:  103896002  MISS:       2738
+cpu0_ITLB LOAD      ACCESS:  103898740  HIT:  103896002  MISS:       2738
+cpu0_ITLB RFO       ACCESS:          0  HIT:          0  MISS:          0
+cpu0_ITLB PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_ITLB WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+cpu0_ITLB TRANSLATION ACCESS:          0  HIT:          0  MISS:          0
+cpu0_ITLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_ITLB AVERAGE MISS LATENCY: 17.0504 cycles
+cpu0_L1I TOTAL     ACCESS:   37854164  HIT:   36177822  MISS:    1676342
+cpu0_L1I LOAD      ACCESS:   37854164  HIT:   36177822  MISS:    1676342
+cpu0_L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1I TRANSLATION ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_L1I AVERAGE MISS LATENCY: 12.8312 cycles
+cpu0_STLB TOTAL     ACCESS:    1190081  HIT:    1171438  MISS:      18643
+cpu0_STLB LOAD      ACCESS:     793192  HIT:     781129  MISS:      12063
+cpu0_STLB RFO       ACCESS:     396889  HIT:     390309  MISS:       6580
+cpu0_STLB PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_STLB WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+cpu0_STLB TRANSLATION ACCESS:          0  HIT:          0  MISS:          0
+cpu0_STLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_STLB AVERAGE MISS LATENCY: 146.453 cycles
+cpu0_L1D TOTAL     ACCESS:  212596263  HIT:  210337889  MISS:    2258374
+cpu0_L1D LOAD      ACCESS:  110907331  HIT:  109230793  MISS:    1676538
+cpu0_L1D RFO       ACCESS:  101671648  HIT:  101091662  MISS:     579986
+cpu0_L1D PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L1D TRANSLATION ACCESS:      17284  HIT:      15434  MISS:       1850
+cpu0_L1D PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_L1D AVERAGE MISS LATENCY: 224.213 cycles
+cpu0_L2C TOTAL     ACCESS:    4636767  HIT:    3154828  MISS:    1481939
+cpu0_L2C LOAD      ACCESS:    3352853  HIT:    2302358  MISS:    1050495
+cpu0_L2C RFO       ACCESS:     575473  HIT:     145377  MISS:     430096
+cpu0_L2C PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+cpu0_L2C WRITEBACK ACCESS:     706591  HIT:     705444  MISS:       1147
+cpu0_L2C TRANSLATION ACCESS:       1850  HIT:       1649  MISS:        201
+cpu0_L2C PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+cpu0_L2C AVERAGE MISS LATENCY: 326.903 cycles
+LLC TOTAL     ACCESS:    1997674  HIT:     774913  MISS:    1222761
+LLC LOAD      ACCESS:    1050486  HIT:     256759  MISS:     793727
+LLC RFO       ACCESS:     430093  HIT:       2563  MISS:     427530
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:     516894  HIT:     515488  MISS:       1406
+LLC TRANSLATION ACCESS:        201  HIT:        103  MISS:         98
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+LLC AVERAGE MISS LATENCY: 370.762 cycles
+~~~~~~~~~~Reuse Distance Profiler output~~~~~~~~~~
+0	88954800	21705264
+1	41065680	26228096
+2	22051184	13297680
+3	17205392	11671008
+4	13442832	7501056
+5	8821728	6602448
+6	7226016	5380656
+7	8197776	5310704
+8	4244880	2572112
+9	3328464	1916272
+10	2046784	1249024
+11	1676128	929152
+12	1450272	909104
+13	1581200	1012048
+14	2091408	1682512
+15	3191920	2776304
+16	1832608	1458480
+17	1532528	779312
+18	1651072	1204336
+19	1471168	1207136
+20	2087408	1407216
+21	1326384	873344
+22	1161472	733632
+23	1615488	1203616
+24	899088	606848
+25	1117264	790512
+26	798512	650576
+27	693120	373664
+28	526304	319952
+29	538992	350432
+30	530976	316080
+31	473856	358704
+32	475264	286608
+33	515536	313328
+34	586576	301072
+35	474032	330224
+36	473968	321520
+37	509232	352256
+38	384624	263200
+39	386128	262128
+40	456688	339232
+41	438288	311280
+42	456016	319344
+43	463472	349456
+44	518304	258208
+45	347616	229568
+46	375984	256544
+47	232224	153888
+48	308352	230832
+49	311440	232592
+50	352928	273296
+51	383440	294864
+52	312256	251456
+53	266368	196624
+54	239408	183856
+55	383008	310416
+56	282512	203088
+57	270336	204384
+58	269408	201504
+59	258352	168160
+60	210384	127936
+61	289328	173792
+62	255312	157504
+63	213936	165616
+64	600912	458016
+66	441104	354288
+68	434912	366848
+70	520256	349344
+72	499088	331776
+74	334512	190640
+76	269696	222480
+78	246560	199248
+80	399200	366176
+82	402272	354224
+84	397984	346976
+86	385856	341472
+88	484144	447744
+90	412544	275680
+92	319264	221536
+94	270848	219104
+96	288784	225392
+98	241904	213200
+100	263408	236624
+102	402944	307808
+104	231552	190512
+106	336464	218544
+108	387120	202064
+110	327472	280848
+112	459840	338944
+114	248256	199952
+116	294208	254304
+118	204224	170992
+120	178304	161584
+122	251968	233648
+124	269376	154992
+126	260272	240000
+128	421312	391504
+132	524528	470656
+136	236208	174784
+140	490336	380768
+144	618672	552288
+148	430032	359536
+152	568400	481440
+156	186880	125888
+160	391840	320832
+164	227024	164672
+168	345664	223312
+172	289808	242976
+176	306720	202256
+180	241824	134736
+184	241296	207136
+188	257552	229376
+192	269744	245552
+196	180480	153600
+200	171488	149088
+204	144896	116240
+208	187152	137456
+212	195680	114688
+216	199392	161648
+220	284176	267760
+224	200992	174112
+228	321424	305376
+232	181184	168288
+236	337904	321808
+240	181328	155888
+244	835328	815168
+248	556544	543504
+252	765424	759008
+256	686496	659968
+264	390080	352192
+272	310144	276720
+280	490960	477408
+288	313360	287584
+296	736976	702192
+304	764944	745344
+312	626848	603072
+320	284752	260864
+328	155648	139824
+336	162336	146384
+344	191760	169840
+352	148176	126480
+360	126000	113680
+368	135104	117616
+376	117728	105968
+384	129168	119840
+392	146720	133872
+400	144160	129696
+408	178752	162976
+416	124592	112016
+424	131776	108672
+432	120304	93920
+440	136096	118272
+448	114896	100720
+456	178576	163568
+464	157584	138352
+472	120144	100864
+480	113024	100192
+488	140896	124144
+496	108192	94928
+504	145104	108544
+512	347984	295600
+528	200256	179680
+544	132464	98784
+560	93888	74272
+576	123312	104656
+592	119392	87984
+608	116320	93120
+624	96112	81472
+640	78256	60144
+656	76416	56992
+672	90816	74368
+688	124016	89776
+704	112208	78592
+720	113840	92272
+736	116864	94112
+752	126048	102016
+768	123792	110880
+784	110016	92448
+800	68080	56320
+816	86128	55136
+832	73760	53584
+848	108256	86000
+864	126624	106224
+880	68752	54384
+896	62496	44800
+912	86272	75216
+928	94368	82208
+944	78704	68464
+960	64272	53008
+976	64160	52464
+992	58336	44752
+1008	48608	43056
+1024	140848	118928
+1056	93440	73632
+1088	98656	73152
+1120	147568	118608
+1152	119536	90816
+1184	80624	60992
+1216	73392	59280
+1248	53968	35760
+1280	84880	63120
+1312	102912	82976
+1344	76352	63152
+1376	131376	103008
+1408	294384	234752
+1440	351888	335280
+1472	103136	76352
+1504	203568	69712
+1536	115296	60512
+1568	82720	55888
+1600	115344	83552
+1632	187872	147008
+1664	106592	76160
+1696	106960	83024
+1728	391728	339744
+1760	156576	100592
+1792	89536	54672
+1824	71728	42656
+1856	70848	43936
+1888	73024	41840
+1920	106672	60016
+1952	96640	61184
+1984	178208	133552
+2016	161808	138080
+2048	131184	99520
+2112	146528	110112
+2176	154912	108048
+2240	184400	122592
+2304	363072	262016
+2368	344960	265440
+2432	200016	152128
+2496	139264	104176
+2560	159248	119360
+2624	182464	133360
+2688	201136	142192
+2752	257920	178752
+2816	158336	119792
+2880	130832	106112
+2944	114144	94752
+3008	119568	98704
+3072	152960	120096
+3136	132160	89936
+3200	154080	96864
+3264	146864	76560
+3328	112448	74944
+3392	109296	82320
+3456	104512	75792
+3520	105472	70752
+3584	258384	193376
+3648	326992	248992
+3712	573376	427904
+3776	333712	227440
+3840	67696	49024
+3904	104064	79120
+3968	141536	106064
+4032	281280	214784
+4096	220624	153248
+4224	75216	62976
+4352	58464	49168
+4480	64640	57344
+4608	50304	42784
+4736	46176	37760
+4864	61984	52640
+4992	91328	79872
+5120	37952	32768
+5248	38096	32912
+5376	30240	25520
+5504	30400	25456
+5632	28320	23392
+5760	25472	21008
+5888	24464	20416
+6016	22000	18160
+6144	21424	17584
+6272	18896	15424
+6400	21360	17296
+6528	21888	17472
+6656	22944	19328
+6784	24016	19456
+6912	21568	16976
+7040	21472	16480
+7168	21920	16480
+7296	21088	16080
+7424	22320	17056
+7552	18064	12832
+7680	19568	14320
+7808	17232	12144
+7936	15344	10368
+8064	16416	11104
+8192	33312	23424
+8448	36544	25456
+8704	36736	24592
+8960	47776	35280
+9216	45168	31584
+9472	44208	29264
+9728	88304	72704
+9984	125568	110912
+10240	52784	38320
+10496	38992	28000
+10752	29136	19424
+11008	26752	18832
+11264	21328	15200
+11520	16624	11488
+11776	18800	14528
+12032	12032	8192
+12288	10560	7344
+12544	10336	7680
+12800	8944	6416
+13056	8400	6288
+13312	7184	4944
+13568	7552	5488
+13824	7552	5536
+14080	7760	5344
+14336	6368	4704
+14592	7136	5312
+14848	5952	4224
+15104	5056	3664
+15360	4256	3200
+15616	3776	2704
+15872	3376	2368
+16128	2448	1600
+16384	5552	4016
+16896	5920	4240
+17408	4944	3808
+17920	3904	2736
+18432	3440	2608
+18944	3936	3024
+19456	3600	2928
+19968	2944	2416
+20480	2784	2272
+20992	3184	2672
+21504	2880	2256
+22016	2032	1632
+22528	2000	1680
+23040	1232	1040
+23552	1680	1360
+24064	1696	1232
+24576	1648	1200
+25088	1280	1088
+25600	1136	800
+26112	1360	1088
+26624	1488	944
+27136	992	736
+27648	1072	768
+28160	1152	752
+28672	1200	816
+29184	1472	1104
+29696	1264	864
+30208	896	768
+30720	880	592
+31232	1120	880
+31744	1008	864
+32256	1088	896
+32768	1888	1424
+33792	1520	1104
+34816	1136	816
+35840	1568	1136
+36864	1104	784
+37888	976	672
+38912	784	544
+39936	1360	1072
+40960	1280	960
+41984	944	768
+43008	832	688
+44032	816	656
+45056	1056	768
+46080	576	448
+47104	880	608
+48128	704	496
+49152	832	560
+50176	800	704
+51200	688	528
+52224	944	720
+53248	544	432
+54272	752	560
+55296	784	656
+56320	816	688
+57344	560	480
+58368	480	400
+59392	944	720
+60416	800	624
+61440	448	384
+62464	976	816
+63488	624	448
+64512	704	576
+65536	1056	944
+67584	1152	944
+69632	1376	1264
+71680	1360	1296
+73728	1632	1264
+75776	1360	1088
+77824	1600	1424
+79872	1392	1264
+81920	1408	1232
+83968	2368	2096
+86016	2208	2032
+88064	1584	1456
+90112	1808	1488
+92160	1968	1776
+94208	2064	1920
+96256	1488	1360
+98304	1520	1392
+100352	1024	848
+102400	2576	2416
+104448	1520	1376
+106496	928	800
+108544	736	544
+110592	528	496
+112640	1072	960
+114688	1376	1168
+116736	864	784
+118784	784	640
+120832	736	672
+122880	1088	864
+124928	1328	1120
+126976	1008	976
+129024	896	784
+131072	3232	2832
+135168	3840	3568
+139264	3872	3632
+143360	6464	6272
+147456	9808	9552
+151552	10064	9808
+155648	11056	10912
+159744	10656	10528
+163840	13024	12720
+167936	12128	11680
+172032	13504	12896
+176128	22976	20992
+180224	29392	28416
+184320	12560	12032
+188416	11088	10896
+192512	11616	11024
+196608	10608	10112
+200704	7712	6928
+204800	7648	7152
+208896	6640	6144
+212992	6176	5648
+217088	6976	6368
+221184	5824	5312
+225280	6480	6048
+229376	6000	5696
+233472	5488	5072
+237568	17840	17520
+241664	14416	13952
+245760	12768	12176
+249856	12976	12672
+253952	14800	14448
+258048	11088	10608
+262144	7632	6656
+270336	5856	5184
+278528	11376	10544
+286720	9728	8720
+294912	9024	8192
+303104	11280	10048
+311296	8672	8160
+319488	8384	7760
+327680	7056	6480
+335872	6608	6192
+344064	5392	5168
+352256	5568	5088
+360448	6736	6080
+368640	4464	4192
+376832	4320	4128
+385024	4720	4240
+393216	4400	3904
+401408	4800	4512
+409600	3248	3056
+417792	3248	3088
+425984	3776	3536
+434176	2992	2784
+442368	3728	3488
+450560	3264	2976
+458752	3792	3600
+466944	3344	3008
+475136	4176	3680
+483328	4352	4096
+491520	3120	2784
+499712	4928	4224
+507904	3104	2784
+516096	2960	2816
+524288	4896	4448
+540672	6816	6448
+557056	6688	6384
+573440	6624	6304
+589824	5616	5520
+606208	6176	5904
+622592	6192	6112
+638976	5920	5792
+655360	6416	6320
+671744	5344	5280
+688128	5152	5024
+704512	3696	3616
+720896	4608	4448
+737280	4128	4048
+753664	3920	3824
+770048	3536	3392
+786432	4032	3888
+802816	3824	3616
+819200	3824	3600
+835584	3680	3504
+851968	3344	3232
+868352	3760	3712
+884736	3264	3216
+901120	4208	4176
+917504	3728	3680
+933888	3584	3552
+950272	3776	3680
+966656	3824	3712
+983040	3376	3296
+999424	2784	2768
+1015808	2464	2336
+1032192	2048	2000
+1048576	4048	3840
+1081344	3616	3408
+1114112	3792	3664
+1146880	3584	3536
+1179648	4000	3904
+1212416	3824	3696
+1245184	4336	4256
+1277952	4000	3904
+1310720	4496	4384
+1343488	4400	4176
+1376256	4000	3872
+1409024	4432	4240
+1441792	4032	3952
+1474560	3680	3536
+1507328	3872	3776
+1540096	3744	3584
+1572864	3376	3232
+1605632	3728	3568
+1638400	3584	3456
+1671168	3600	3504
+1703936	3264	3152
+1736704	7648	7552
+1769472	448	384
+1802240	416	288
+1835008	416	288
+1867776	2208	2096
+1900544	3360	3168
+1933312	3328	3200
+1966080	3472	3392
+1998848	3584	3376
+2031616	3440	3232
+2064384	3344	3232
+2097152	6624	6336
+2162688	6144	5856
+2228224	1040	768
+2293760	880	720
+2359296	880	608
+2424832	1008	688
+2490368	1184	816
+2555904	1008	688
+2621440	1232	704
+2686976	1280	960
+2752512	992	720
+2818048	960	768
+2883584	704	464
+2949120	1072	896
+3014656	1136	624
+3080192	1136	848
+3145728	944	608
+3211264	1072	720
+3276800	1072	720
+3342336	864	608
+3407872	992	816
+3473408	976	672
+3538944	992	640
+3604480	864	608
+3670016	816	544
+3735552	688	416
+3801088	784	480
+3866624	944	592
+3932160	880	656
+3997696	960	816
+4063232	864	656
+4128768	880	592
+4194304	1872	1248
+4325376	1968	1392
+4456448	1840	1424
+4587520	1840	1376
+4718592	1968	1328
+4849664	1952	1424
+4980736	1776	1360
+5111808	1776	1136
+5242880	1760	1152
+5373952	2016	1392
+5505024	1728	1232
+5636096	1760	1104
+5767168	1472	928
+5898240	1344	704
+6029312	1568	1104
+6160384	1456	1040
+6291456	1616	1088
+6422528	1712	960
+6553600	1264	864
+6684672	1808	1056
+6815744	1328	832
+6946816	1824	1184
+7077888	1552	1136
+7208960	1600	880
+7340032	1696	1088
+7471104	1424	912
+7602176	1760	1296
+7733248	1984	1344
+7864320	1808	1152
+7995392	1984	1392
+8126464	1584	1104
+8257536	1456	912
+8388608	3872	2672
+8650752	4032	2832
+8912896	9120	8096
+9175040	6048	5040
+9437184	5584	4320
+9699328	4320	3248
+9961472	2800	1376
+10223616	2640	1520
+10485760	3280	2112
+10747904	3216	1920
+11010048	3328	2160
+11272192	2864	1712
+11534336	2640	1424
+11796480	2576	1424
+12058624	2432	1360
+12320768	2960	1728
+12582912	3328	2144
+12845056	4480	3328
+13107200	5056	4096
+13369344	7712	6448
+13631488	5616	4624
+13893632	4144	3424
+14155776	2832	2656
+14417920	3840	3456
+14680064	6048	5840
+14942208	4352	3968
+15204352	1936	1792
+15466496	2896	2368
+15728640	26832	24320
+15990784	55504	44736
+16252928	45088	28752
+16515072	14352	7968
+16777216	8256	7520
+17301504	5696	5184
+17825792	4704	4000
+18350080	5296	4384
+18874368	5344	4416
+19398656	4144	3344
+19922944	4848	4208
+20447232	4944	4016
+20971520	4208	3456
+21495808	4272	3232
+22020096	3840	3024
+22544384	3584	2864
+23068672	3168	2448
+23592960	3120	2864
+24117248	3232	2864
+24641536	3888	3696
+25165824	5680	5360
+25690112	46976	45440
+26214400	9216	9072
+26738688	4528	4352
+27262976	4976	4608
+27787264	5408	5152
+28311552	4192	4000
+28835840	3888	3616
+29360128	4352	4192
+29884416	3360	3264
+30408704	3168	2992
+30932992	3072	2944
+31457280	1952	1936
+31981568	1440	1440
+32505856	1872	1856
+33030144	2624	2624
+33554432	4512	4512
+34603008	7776	4544
+35651584	9440	4560
+36700160	4800	4784
+37748736	5360	5360
+38797312	4768	4768
+39845888	3888	3888
+40894464	3248	3248
+41943040	832	832
+42991616	0	0
+44040192	64	64
+45088768	0	0
+46137344	608	592
+47185920	1104	1104
+48234496	1552	1552
+49283072	1728	1728
+50331648	1488	1488
+51380224	1152	1152
+52428800	1312	1312
+53477376	816	816
+54525952	608	608
+55574528	352	352
+56623104	480	480
+57671680	112	112
+58720256	496	496
+59768832	720	720
+60817408	1248	1248
+61865984	1024	1024
+62914560	1216	1216
+63963136	992	992
+65011712	832	832
+66060288	592	592
+67108864	1232	1232
+69206016	1728	1728
+71303168	10416	10400
+73400320	2880	2880
+75497472	2224	2224
+77594624	1392	1392
+79691776	16	16
+81788928	0	0
+83886080	16	0
+85983232	272	272
+88080384	64	64
+90177536	0	0
+92274688	16	16
+94371840	1408	1392
+96468992	4448	4448
+98566144	4384	4384
+100663296	4640	4624
+102760448	4560	4544
+104857600	1520	1456
+106954752	416	384
+109051904	608	608
+111149056	624	624
+113246208	3600	3600
+115343360	4784	4784
+117440512	2960	2832
+119537664	16	16
+121634816	0	0
+123731968	1008	0
+125829120	2560	0
+127926272	2784	112
+130023424	4064	656
+132120576	6384	1776
+134217728	8816	3008
+138412032	64	16
+142606336	144	128
+146800640	0	0
+150994944	144	48
+155189248	32	32
+159383552	112	112
+163577856	0	0
+167772160	0	0
+171966464	208	208
+176160768	192	192
+180355072	656	656
+184549376	240	240
+188743680	192	48
+192937984	16	16
+197132288	0	0
+201326592	1184	1184
+205520896	8240	8240
+209715200	24480	22464
+213909504	48	48
+218103808	16	16
+222298112	0	0
+226492416	0	0
+230686720	0	0
+234881024	1152	1152
+239075328	2864	2864
+243269632	288	288
+247463936	4800	4800
+251658240	32	32
+255852544	0	0
+260046848	0	0
+264241152	0	0
+268435456	0	0
+276824064	0	0
+285212672	0	0
+293601280	0	0
+301989888	0	0
+310378496	0	0
+318767104	0	0
+327155712	0	0
+335544320	0	0
+343932928	0	0
+352321536	0	0
+360710144	0	0
+369098752	0	0
+377487360	0	0
+385875968	0	0
+394264576	0	0
+402653184	0	0
+411041792	0	0
+419430400	0	0
+427819008	0	0
+436207616	0	0
+444596224	0	0
+452984832	0	0
+461373440	0	0
+469762048	0	0
+478150656	0	0
+486539264	0	0
+494927872	0	0
+503316480	0	0
+511705088	0	0
+520093696	0	0
+528482304	0	0
+536870912	0	0
+553648128	0	0
+570425344	0	0
+587202560	0	0
+603979776	0	0
+620756992	0	0
+637534208	0	0
+654311424	0	0
+671088640	0	0
+687865856	0	0
+704643072	0	0
+721420288	0	0
+738197504	0	0
+754974720	0	0
+771751936	0	0
+788529152	0	0
+805306368	0	0
+822083584	0	0
+838860800	0	0
+855638016	0	0
+872415232	0	0
+889192448	0	0
+905969664	0	0
+922746880	0	0
+939524096	0	0
+956301312	0	0
+973078528	0	0
+989855744	0	0
+1006632960	0	0
+1023410176	0	0
+1040187392	0	0
+1056964608	0	0
+1073741824	0	0
+1107296256	0	0
+1140850688	0	0
+1174405120	0	0
+1207959552	0	0
+1241513984	0	0
+1275068416	0	0
+1308622848	0	0
+1342177280	0	0
+1375731712	0	0
+1409286144	0	0
+1442840576	0	0
+1476395008	0	0
+1509949440	0	0
+1543503872	0	0
+1577058304	0	0
+1610612736	0	0
+1644167168	0	0
+1677721600	0	0
+1711276032	0	0
+1744830464	0	0
+1778384896	0	0
+1811939328	0	0
+1845493760	0	0
+1879048192	0	0
+1912602624	0	0
+1946157056	0	0
+1979711488	0	0
+2013265920	0	0
+2046820352	0	0
+2080374784	0	0
+2113929216	0	0
+2147483648	0	0
+2214592512	0	0
+2281701376	0	0
+2348810240	0	0
+2415919104	0	0
+2483027968	0	0
+2550136832	0	0
+2617245696	0	0
+2684354560	0	0
+2751463424	0	0
+2818572288	0	0
+2885681152	0	0
+2952790016	0	0
+3019898880	0	0
+3087007744	0	0
+3154116608	0	0
+3221225472	0	0
+3288334336	0	0
+3355443200	0	0
+3422552064	0	0
+3489660928	0	0
+3556769792	0	0
+3623878656	0	0
+3690987520	0	0
+3758096384	0	0
+3825205248	0	0
+3892314112	0	0
+3959422976	0	0
+4026531840	0	0
+4093640704	0	0
+4160749568	0	0
+4227858432	0	0
+~~~~~~~~~~Reuse Distance Profiler output end~~~~~~~~~~
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:      81570  ROW_BUFFER_MISS:    1139620
+ DBUS AVG_CONGESTED_CYCLE:    3.95443
+ WQ ROW_BUFFER_HIT:      79122  ROW_BUFFER_MISS:     432602  FULL:          0
+
+
+CPU 0 Branch Prediction Accuracy: 83.9785% MPKI: 6.17544 Average ROB Occupancy at Mispredict: 102.608
+Branch type MPKI
+BRANCH_DIRECT_JUMP: 8.2e-05
+BRANCH_INDIRECT: 0.000530667
+BRANCH_CONDITIONAL: 6.12255
+BRANCH_DIRECT_CALL: 0.000139333
+BRANCH_INDIRECT_CALL: 0.00976867
+BRANCH_RETURN: 0.042368
+
