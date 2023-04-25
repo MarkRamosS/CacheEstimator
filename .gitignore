@@ -3,4 +3,4 @@ obj-intel64
 *.xz
 traces
 outputs
-raw_input
+raw_data
