@@ -6,10 +6,10 @@
 
 // MAX_RD holds the maximum reuse distance (+1) stored in the histogram
 // Increase it for larger histograms
-#define MAX_RD	(2 * 1024 * 1024)
+#define MAX_RD	(200 * 1024 * 1024)
 // COLD_MISSES activates the code which takes into consideration cold misses 
 // when calculating reuse distance scaling or stack distances
-#define COLD_MISSES
+// #define COLD_MISSES
 
 #define SMALLEST_CACHE (32 * 1024)
 #define LARGEST_CACHE  (8192 * 1024)
@@ -49,7 +49,7 @@ int main (int argc, char **argv)
 
 	while (cache_size <= LARGEST_CACHE)
 	{
-        printf("Cache Size: %d", cache_size);
+   //     printf("Cache Size: %d", cache_size);
 		miss_rate_random = statcache_random_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 		miss_rate_lru    = statcache_lru_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 
@@ -80,9 +80,10 @@ static void initialization (int argc, char **argv)
 	histogram       = (unsigned *) calloc(MAX_RD, sizeof(unsigned));
 	cumul_histogram = (long long unsigned *) calloc(MAX_RD, sizeof(long long unsigned));
     printf("Here.");
-	while (scanf ("%*s\t%d\t%u\n", &rd, &hist_value) == 2)
+    scanf ("%*[^\n]\n");
+	while (scanf ("%d,%d,%*d\n", &rd, &hist_value) == 2)
 	{
-        printf("RD: %d \n", rd);
+        //printf("RD: %d \n", rd);
 		if (rd >= MAX_RD)
 			break;
 
