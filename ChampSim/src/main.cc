@@ -329,6 +329,8 @@ int main(int argc, char** argv)
   sigaction(SIGINT, &sigIntHandler, NULL);
 
   cout << endl << "*** ChampSim Multicore Out-of-Order Simulator ***" << endl << endl;
+  // cache output counter
+  uint64_t output_ctr = 200000; 
 
   // initialize knobs
   uint8_t show_heartbeat = 1;
@@ -452,12 +454,26 @@ int main(int argc, char** argv)
         cout << "Heartbeat CPU " << i << " instructions: " << ooo_cpu[i]->num_retired << " cycles: " << ooo_cpu[i]->current_cycle;
         cout << " heartbeat IPC: " << heartbeat_ipc << " cumulative IPC: " << cumulative_ipc;
         cout << " (Simulation time: " << elapsed_hour << " hr " << elapsed_minute << " min " << elapsed_second << " sec) " << endl;
+        if (all_warmup_complete > NUM_CPUS) {
+            cout << endl << "Region of Interest Statistics" << endl;
+            //cout << endl << caches[2]->sim_access[0][0] + caches[2]->sim_access[0][1] << endl;
+            for (uint32_t i = 0; i < NUM_CPUS; i++) {
+              for (auto it = caches.rbegin(); it != caches.rend(); ++it)
+                print_sim_stats(i, *it);
+            }
+            //for (auto it = caches.rbegin(); it != caches.rend(); ++it){
+            //  (*it)->impl_replacement_final_stats();
+            //}
+        }
         ooo_cpu[i]->next_print_instruction += STAT_PRINTING_PERIOD;
 
         ooo_cpu[i]->last_sim_instr = ooo_cpu[i]->num_retired;
         ooo_cpu[i]->last_sim_cycle = ooo_cpu[i]->current_cycle;
       }
-
+      //if( caches[2]->sim_access[0][0] + caches[2]->sim_access[0][1] > output_ctr ){
+      //    output_ctr += 200000;
+      //    cout<<"2"<<endl;
+      //}
       // check for warmup
       // warmup complete
       if ((warmup_complete[i] == 0) && (ooo_cpu[i]->num_retired > warmup_instructions)) {
@@ -516,9 +532,9 @@ int main(int argc, char** argv)
   for (auto it = caches.rbegin(); it != caches.rend(); ++it)
     (*it)->impl_prefetcher_final_stats();
 
-  for (auto it = caches.rbegin(); it != caches.rend(); ++it)
+  for (auto it = caches.rbegin(); it != caches.rend(); ++it){
     (*it)->impl_replacement_final_stats();
-
+  }
 #ifndef CRC2_COMPILE
   print_dram_stats();
   print_branch_stats();

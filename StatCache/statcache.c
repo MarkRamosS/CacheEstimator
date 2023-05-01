@@ -6,7 +6,7 @@
 
 // MAX_RD holds the maximum reuse distance (+1) stored in the histogram
 // Increase it for larger histograms
-#define MAX_RD	(200 * 1024 * 1024)
+#define MAX_RD	(2 * 1024 * 1024)
 // COLD_MISSES activates the code which takes into consideration cold misses 
 // when calculating reuse distance scaling or stack distances
 // #define COLD_MISSES

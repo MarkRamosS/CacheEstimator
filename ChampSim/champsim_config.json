@@ -2,7 +2,7 @@
     "executable_name": "bin/champsim",
     "block_size": 64,
     "page_size": 4096,
-    "heartbeat_frequency": 10000000,
+    "heartbeat_frequency": 2000000,
     "num_cores": 1,
 
     "ooo_cpu": [
@@ -143,7 +143,7 @@
 
     "LLC": {
         "frequency": 4000,
-        "sets": 2048,
+        "sets": 256,
         "ways": 16,
         "rq_size": 32,
         "wq_size": 32,

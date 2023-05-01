@@ -11,7 +11,7 @@
 
 FILE *profile;
 
-Sampler *smpl = NULL;
+Sampler *smpl = new Sampler;
 #if MAX_THREADS > 1
 std::array<std::atomic<unsigned>, MAX_BUCKET + 1> histogram;
 std::array<std::atomic<unsigned>, MAX_BUCKET + 1> histogram_read;
@@ -95,7 +95,6 @@ void remove_all_expired(counter_t now) {
 
 void rdprof_init()
 {
-    smpl = new Sampler;
 
     profile = fopen("prof.out", "w");
     fprintf(profile, "Max Distance:\t%ld\tRefresh Period:\t%ld\tRPeriod Mask:\t%lx\n\n", 
@@ -105,16 +104,16 @@ void rdprof_init()
 
 void rdprof_fini()
 {
-    smpl->stats_print(profile, real_now());
+    //smpl->stats_print(profile, real_now());
 
-    printf("~~~~~~~~~~Reuse Distance Profiler output~~~~~~~~~~\n");
+    std::cout<<"~~~~~~~~~~Reuse Distance Profiler output~~~~~~~~~~"<<std::endl;
     for (int i = 0; i <= MAX_BUCKET; i++)
-        printf("%llu\t%llu\t%llu\n", GET_DISTANCE(i), 
-                SAMPLING_PERIOD * 1LLU * histogram[i],  SAMPLING_PERIOD * 1LLU * histogram_read[i]);
-    fclose(profile);
-    printf("~~~~~~~~~~Reuse Distance Profiler output end~~~~~~~~~~\n");
+        std::cout<<GET_DISTANCE(i) << "\t"<< 
+                SAMPLING_PERIOD * 1LLU * histogram[i]<< "\t" << 
+                SAMPLING_PERIOD * 1LLU * histogram_read[i]<<std::endl;
+    std::cout<<"~~~~~~~~~~Reuse Distance Profiler output end~~~~~~~~~~\n"<<std::endl;
 
-    delete smpl;
+    //delete smpl;
 }
 
 /* ===================================================================== */
