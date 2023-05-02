@@ -6,7 +6,7 @@
 
 // MAX_RD holds the maximum reuse distance (+1) stored in the histogram
 // Increase it for larger histograms
-#define MAX_RD	(2 * 1024 * 1024)
+#define MAX_RD	(20 * 1024 * 1024)
 // COLD_MISSES activates the code which takes into consideration cold misses 
 // when calculating reuse distance scaling or stack distances
 // #define COLD_MISSES
@@ -49,7 +49,7 @@ int main (int argc, char **argv)
 
 	while (cache_size <= LARGEST_CACHE)
 	{
-   //     printf("Cache Size: %d", cache_size);
+        // printf("Cache Size: %d", cache_size);
 		miss_rate_random = statcache_random_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 		miss_rate_lru    = statcache_lru_solver (histogram, (max_rd + 1), (double) (cache_size / 64));
 
@@ -83,7 +83,6 @@ static void initialization (int argc, char **argv)
     scanf ("%*[^\n]\n");
 	while (scanf ("%d,%d,%*d\n", &rd, &hist_value) == 2)
 	{
-        //printf("RD: %d \n", rd);
 		if (rd >= MAX_RD)
 			break;
 
@@ -91,10 +90,11 @@ static void initialization (int argc, char **argv)
 		histogram[rd]       = hist_value;
 	}
 	max_rd = rd;
-    printf("And here.");
+    printf("\nAnd here.\n");
 	cumul_histogram[0] = histogram[0];
-	for (rd = 1; rd <= max_rd; rd++)
+	for (rd = 1; rd <= max_rd; rd++){
 		cumul_histogram[rd] = cumul_histogram[rd - 1] + histogram[rd];
+    }
 }
 
 
@@ -198,10 +198,10 @@ double statcache_lru_solver (unsigned *histogram, unsigned hist_size, double L)
 	double hits = 0.0;
 	double misses = 0.0;
 
+	// printf("MILK: %f \n ",statcache_lru_calc_unique_occurancies(histogram, hist_size, high_limit));
 	if (statcache_lru_calc_unique_occurancies(histogram, hist_size, high_limit) <= L)
 		return 0.0;
-	
-	if (statcache_lru_calc_unique_occurancies(histogram, hist_size, low_limit) >= L)
+    if (statcache_lru_calc_unique_occurancies(histogram, hist_size, low_limit) >= L)
 		return 1.0;
 	
 	while ((high_limit - low_limit > 1))

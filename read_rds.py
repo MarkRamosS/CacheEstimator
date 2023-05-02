@@ -30,7 +30,6 @@ for file in os.listdir(path):
                 ctr += 1
             hist_list.append(hist.copy())
 
-    x = [0,0] * 
     print(f'Printing: {file}, {len(hist_list)} rds')
     with open('dataset/input/'+file[:-3]+'csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=conf_values)

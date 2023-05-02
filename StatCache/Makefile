@@ -10,7 +10,10 @@ CFLAGS = -g -O3 -msse2 -m32 -fprefetch-loop-arrays
 solver: statcache.c
 	${CC} ${CFLAGS} statcache.c -o solver -lm
 
-all: 	solver
+my_solver: second_solver.cpp 
+	${CC} ${CFLAGS} second_solver.cpp -o solver2 -lm
+
+all: 	solver my_solver
 
 clean:
 	rm -f *.o; rm -f *~; rm -f solver ;
