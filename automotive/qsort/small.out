@@ -1,6 +1,0 @@
-E: [tid:142464] Missing application name
-Pin: pin-3.26-98690-1fc9d60e6
-Copyright 2002-2022 Intel Corporation.
-
-Usage: pin [OPTION] [-t <tool> [<toolargs>]] -- <command line>
-Use -help for a description of options
