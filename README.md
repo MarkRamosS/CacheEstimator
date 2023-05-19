@@ -10,7 +10,7 @@ Reuse Distance is calculated with help of rdprof. A tool added to the replacemen
 
 
 ## Reuse Distances and Cache Simulations
-The outputs of the execution are located in the database repository: https://github.com/MarkRamosS/ce_data
+The outputs of the Champsim simulation are located in the database repository: https://github.com/MarkRamosS/ce_data
 
 
 
