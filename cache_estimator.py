@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 27,
    "id": "22ba1f53",
    "metadata": {},
    "outputs": [],
@@ -582,17 +582,17 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "30507            445.gobmk-17B_591\n",
-      "104593          625.x264_s-20B_532\n",
-      "109214    631.deepsjeng_s-928B_647\n",
-      "39627         454.calculix-460B_71\n",
-      "57930            473.astar-359B_33\n",
-      "                    ...           \n",
-      "44483           458.sjeng-767B_361\n",
-      "60565             481.wrf-1254B_68\n",
-      "106346           625.x264_s-39B_89\n",
-      "78392       603.bwaves_s-2931B_545\n",
-      "68656       483.xalancbmk-127B_546\n",
+      "78481        603.bwaves_s-2931B_625\n",
+      "60935             481.wrf-1281B_338\n",
+      "115610         641.leela_s-800B_336\n",
+      "30999               445.gobmk-2B_36\n",
+      "12465               429.mcf-22B_531\n",
+      "                    ...            \n",
+      "102414     623.xalancbmk_s-700B_594\n",
+      "130973    649.fotonik3d_s-7084B_681\n",
+      "129413    649.fotonik3d_s-1176B_625\n",
+      "65965         482.sphinx3-1522B_146\n",
+      "62242              481.wrf-455B_166\n",
       "Name: id, Length: 99092, dtype: object\n"
      ]
     }
@@ -663,7 +663,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 104,
    "id": "f228d088",
    "metadata": {},
    "outputs": [
@@ -671,19 +671,19 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Model: \"sequential_2\"\n",
+      "Model: \"sequential_10\"\n",
       "_________________________________________________________________\n",
       " Layer (type)                Output Shape              Param #   \n",
       "=================================================================\n",
-      " dense_6 (Dense)             (None, 128)               114816    \n",
+      " dense_24 (Dense)            (None, 1024)              918528    \n",
       "                                                                 \n",
-      " dense_7 (Dense)             (None, 128)               16512     \n",
+      " dense_25 (Dense)            (None, 1024)              1049600   \n",
       "                                                                 \n",
-      " dense_8 (Dense)             (None, 9)                 1161      \n",
+      " dense_26 (Dense)            (None, 9)                 9225      \n",
       "                                                                 \n",
       "=================================================================\n",
-      "Total params: 132,489\n",
-      "Trainable params: 132,489\n",
+      "Total params: 1,977,353\n",
+      "Trainable params: 1,977,353\n",
       "Non-trainable params: 0\n",
       "_________________________________________________________________\n"
      ]
@@ -692,15 +692,15 @@
    "source": [
     "from keras.models import Sequential\n",
     "from keras.layers import Dense\n",
-    "\n",
+    "from keras import Input\n",
     "# Create the model\n",
     "model = Sequential()\n",
-    "\n",
+    "model.add(Input(shape=(896, )))\n",
     "# Add the input layer and the first hidden layer\n",
-    "model.add(Dense(128, input_dim=896, activation='sigmoid'))\n",
+    "model.add(Dense(1024, activation='sigmoid'))\n",
     "\n",
     "# Add the second hidden layer\n",
-    "model.add(Dense(128, activation='sigmoid'))\n",
+    "model.add(Dense(1024, activation='sigmoid'))\n",
     "\n",
     "# Add the output layer\n",
     "model.add(Dense(9, activation='sigmoid'))\n",
@@ -714,74 +714,43 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
-   "id": "b176fb0e",
+   "execution_count": 105,
+   "id": "bae89238",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ll = model(X_train.to_numpy())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 106,
+   "id": "9b5c1d50",
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "0             164512\n",
-      "1              49696\n",
-      "2              31360\n",
-      "3              27792\n",
-      "4              20320\n",
-      "               ...  \n",
-      "3959422976         0\n",
-      "4026531840         0\n",
-      "4093640704         0\n",
-      "4160749568         0\n",
-      "4227858432         0\n",
-      "Name: 30507, Length: 896, dtype: int64\n",
-      "(99092, 896)\n"
+      "tf.Tensor(\n",
+      "[[0.28801483 0.6044907  0.45502704 ... 0.71171165 0.23265873 0.20295328]\n",
+      " [0.33268002 0.5034498  0.46771303 ... 0.73570794 0.23044915 0.26496053]\n",
+      " [0.28893918 0.59640616 0.47816816 ... 0.7349159  0.21950576 0.21934134]\n",
+      " ...\n",
+      " [0.29208088 0.5345501  0.51180005 ... 0.73828024 0.21859095 0.24050203]\n",
+      " [0.31866792 0.55891204 0.44222066 ... 0.7376148  0.20373449 0.24402003]\n",
+      " [0.2816464  0.58128816 0.46634847 ... 0.7281808  0.22827178 0.24496563]], shape=(99092, 9), dtype=float32)\n"
      ]
     }
    ],
    "source": [
-    "print(X_train.iloc[0])\n",
-    "f = X_train.to_numpy()\n",
-    "print(f.shape)"
+    "print(ll)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
-   "id": "bae89238",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "<tf.Tensor: shape=(99092, 9), dtype=float32, numpy=\n",
-       "array([[0.29401082, 0.6546524 , 0.30015853, ..., 0.623411  , 0.66539925,\n",
-       "        0.6011643 ],\n",
-       "       [0.28105772, 0.7120245 , 0.31031764, ..., 0.6465658 , 0.6655566 ,\n",
-       "        0.5936468 ],\n",
-       "       [0.29231486, 0.6590096 , 0.29701558, ..., 0.6391847 , 0.6680944 ,\n",
-       "        0.6080179 ],\n",
-       "       ...,\n",
-       "       [0.29576048, 0.6808845 , 0.32647285, ..., 0.6267553 , 0.63346124,\n",
-       "        0.6145096 ],\n",
-       "       [0.30172426, 0.68091995, 0.32331818, ..., 0.61962515, 0.6494464 ,\n",
-       "        0.6349403 ],\n",
-       "       [0.27216485, 0.7221053 , 0.343442  , ..., 0.65991545, 0.642159  ,\n",
-       "        0.605599  ]], dtype=float32)>"
-      ]
-     },
-     "execution_count": 21,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "model(X_train.to_numpy())"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "018417f1",
+   "execution_count": 107,
+   "id": "1a21d4d1",
    "metadata": {},
    "outputs": [
     {
@@ -789,44 +758,66 @@
      "output_type": "stream",
      "text": [
       "Epoch 1/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7106 - accuracy: 0.0750\n",
+      "3097/3097 [==============================] - 33s 10ms/step - loss: 1.7041 - accuracy: 0.0567\n",
       "Epoch 2/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7036 - accuracy: 0.0738\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6992 - accuracy: 0.0572\n",
       "Epoch 3/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7023 - accuracy: 0.0722\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6978 - accuracy: 0.0607\n",
       "Epoch 4/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7018 - accuracy: 0.0709\n",
+      "3097/3097 [==============================] - 30s 10ms/step - loss: 1.6971 - accuracy: 0.0624\n",
       "Epoch 5/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7013 - accuracy: 0.0692\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6967 - accuracy: 0.0635\n",
       "Epoch 6/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7011 - accuracy: 0.0704\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6965 - accuracy: 0.0630\n",
       "Epoch 7/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7010 - accuracy: 0.0707\n",
+      "3097/3097 [==============================] - 30s 10ms/step - loss: 1.6964 - accuracy: 0.0641\n",
       "Epoch 8/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7009 - accuracy: 0.0683\n",
+      "3097/3097 [==============================] - 29s 9ms/step - loss: 1.6962 - accuracy: 0.0634\n",
       "Epoch 9/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7008 - accuracy: 0.0696\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6961 - accuracy: 0.0634\n",
       "Epoch 10/25\n",
-      "3097/3097 [==============================] - 6s 2ms/step - loss: 1.7008 - accuracy: 0.0691\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6960 - accuracy: 0.0639\n",
       "Epoch 11/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7007 - accuracy: 0.0693\n",
+      "3097/3097 [==============================] - 33s 11ms/step - loss: 1.6959 - accuracy: 0.0633\n",
       "Epoch 12/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7007 - accuracy: 0.0696\n",
+      "3097/3097 [==============================] - 33s 11ms/step - loss: 1.6958 - accuracy: 0.0646\n",
       "Epoch 13/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7007 - accuracy: 0.0689\n",
+      "3097/3097 [==============================] - 37s 12ms/step - loss: 1.6958 - accuracy: 0.0653\n",
       "Epoch 14/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7007 - accuracy: 0.0690\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6957 - accuracy: 0.0658\n",
       "Epoch 15/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7006 - accuracy: 0.0690\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6957 - accuracy: 0.0655\n",
       "Epoch 16/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7006 - accuracy: 0.0686\n",
+      "3097/3097 [==============================] - 33s 11ms/step - loss: 1.6956 - accuracy: 0.0663\n",
       "Epoch 17/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7006 - accuracy: 0.0677\n",
+      "3097/3097 [==============================] - 33s 11ms/step - loss: 1.6956 - accuracy: 0.0667\n",
       "Epoch 18/25\n",
-      "3097/3097 [==============================] - 7s 2ms/step - loss: 1.7006 - accuracy: 0.0688\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6955 - accuracy: 0.0684\n",
       "Epoch 19/25\n",
-      "2659/3097 [========================>.....] - ETA: 0s - loss: 1.7040 - accuracy: 0.0692"
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6955 - accuracy: 0.0684\n",
+      "Epoch 20/25\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6955 - accuracy: 0.0683\n",
+      "Epoch 21/25\n",
+      "3097/3097 [==============================] - 33s 10ms/step - loss: 1.6954 - accuracy: 0.0676\n",
+      "Epoch 22/25\n",
+      "3097/3097 [==============================] - 31s 10ms/step - loss: 1.6954 - accuracy: 0.0686\n",
+      "Epoch 23/25\n",
+      "3097/3097 [==============================] - 2261s 730ms/step - loss: 1.6954 - accuracy: 0.0679\n",
+      "Epoch 24/25\n",
+      "3097/3097 [==============================] - 34s 11ms/step - loss: 1.6953 - accuracy: 0.0687\n",
+      "Epoch 25/25\n",
+      "3097/3097 [==============================] - 32s 10ms/step - loss: 1.6953 - accuracy: 0.0685\n"
      ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "<keras.callbacks.History at 0x241cc343fa0>"
+      ]
+     },
+     "execution_count": 107,
+     "metadata": {},
+     "output_type": "execute_result"
     }
    ],
    "source": [
@@ -835,8 +826,46 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 74,
+   "id": "f0bece96",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tf.Tensor([0. 0. 0. 0. 0. 0. 0. 0. 0.], shape=(9,), dtype=float32)\n",
+      "tf.Tensor([9306. 9306. 9306. 9306. 9306. 9306. 9306. 9306. 9306.], shape=(9,), dtype=float32)\n",
+      "tf.Tensor(\n",
+      "[[0. 0. 0. ... 0. 0. 0.]\n",
+      " [0. 0. 0. ... 0. 0. 0.]\n",
+      " [0. 0. 0. ... 0. 0. 0.]\n",
+      " ...\n",
+      " [0. 0. 0. ... 0. 0. 0.]\n",
+      " [1. 1. 1. ... 1. 1. 1.]\n",
+      " [1. 1. 1. ... 1. 1. 1.]], shape=(42469, 9), dtype=float32)\n"
+     ]
+    }
+   ],
+   "source": [
+    "f = model(X_test.to_numpy())\n",
+    "print(f[0])\n",
+    "print(sum(f))\n",
+    "print(f)"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": null,
-   "id": "80b2d623",
+   "id": "3539e10d",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7a431eed",
    "metadata": {},
    "outputs": [],
    "source": []
