@@ -181,7 +181,12 @@ void initialization(int argc, char** argv){
         getline(file, line);
         stringstream str(line);
 
+        bool tmp_ctr = true;
         while(getline(str, word, ',')){
+            if(tmp_ctr){
+                tmp_ctr = false;
+                continue;
+            }
             ss.clear();
             ss << word;
             ss >> tmp;
@@ -215,7 +220,12 @@ void initialization(int argc, char** argv){
             stringstream str2(line);
             histogram.clear();
             cumul_histogram.clear();
+            bool tmp_ctr = true;
             while(getline(str2, word, ',')){
+                if(tmp_ctr){
+                    tmp_ctr = false;
+                    continue;
+                }
                 ss.clear();
                 ss << word;
                 ss >> tmp;
