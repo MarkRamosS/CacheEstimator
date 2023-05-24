@@ -206,14 +206,14 @@ void initialization(int argc, char** argv){
             cout<<"diffs size: "<<diffs.size()<<endl;
         }
         // cout<<"Buckets: "<<buckets.size()<<endl;
-        printf("random_32,lru_32");
-        printf("random_64,lru_64");
-        printf("random_128,lru_128");
-        printf("random_256,lru_256");
-        printf("random_512,lru_512");
-        printf("random_1024,lru_1024");
-        printf("random_2048,lru_2048");
-        printf("random_4096,lru_4096");
+        printf("random_32,lru_32,");
+        printf("random_64,lru_64,");
+        printf("random_128,lru_128,");
+        printf("random_256,lru_256,");
+        printf("random_512,lru_512,");
+        printf("random_1024,lru_1024,");
+        printf("random_2048,lru_2048,");
+        printf("random_4096,lru_4096,");
         printf("random_8192,lru_8192\n");
 
         while(getline(file, line)){
