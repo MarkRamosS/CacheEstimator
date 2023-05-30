@@ -10,7 +10,7 @@ using namespace std;
 
 // Buckets in csv files of input
 #define BUCKETS buckets.size()
-#define MAX_RD	(4227858433) // All buckets
+#define MAX_RD	(4227858432) // All buckets
 // COLD_MISSES activates the code which takes into consideration cold misses 
 // when calculating reuse distance scaling or stack distances
 // #define COLD_MISSES
@@ -22,7 +22,7 @@ using namespace std;
 
 //--------->          Interface Functions Prototypes         <--------------
 double statcache_random_solver (double L);
-double statcache_lru_solver (double L);
+uint64_t statcache_lru_solver (double L);
 
 //--------->           Backend Functions Prototypes          <--------------
 static void initialization (int argc, char **argv);
@@ -116,7 +116,7 @@ double statcache_random_solver (double L)
  * histogram holds the Histogram Data
  * L is the number of cache lines in the cache (cache size / cache line size)
  */
-double statcache_lru_solver (double L)
+uint64_t statcache_lru_solver (double L)
 {
 	int i;
 
@@ -147,7 +147,7 @@ double statcache_lru_solver (double L)
 	hits = (double) cumul_histogram[low_limit];
 	misses = total_accesses - hits;
 
-	return (misses / total_accesses);
+	return misses ;
 }
 
 static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
@@ -190,14 +190,14 @@ void initialization(int argc, char** argv){
             ss.clear();
             ss << word;
             ss >> tmp;
-            if(tmp >= MAX_RD) 
-                break;
             if(buckets.size() > 0){
                 diffs.push_back(tmp - buckets[buckets.size()-1]);
             } else {
                 diffs.push_back(1);
             }
             buckets.push_back(tmp);
+            if(tmp >= MAX_RD) 
+                break;
         }
         content.push_back(diffs);
         content.push_back(buckets);
@@ -206,6 +206,7 @@ void initialization(int argc, char** argv){
             cout<<"diffs size: "<<diffs.size()<<endl;
         }
         // cout<<"Buckets: "<<buckets.size()<<endl;
+        printf("id,");
         printf("random_32,lru_32,");
         printf("random_64,lru_64,");
         printf("random_128,lru_128,");
@@ -214,7 +215,8 @@ void initialization(int argc, char** argv){
         printf("random_1024,lru_1024,");
         printf("random_2048,lru_2048,");
         printf("random_4096,lru_4096,");
-        printf("random_8192,lru_8192\n");
+        printf("random_8192,lru_8192,");
+        printf("total_accesses\n");
 
         while(getline(file, line)){
             stringstream str2(line);
@@ -223,6 +225,7 @@ void initialization(int argc, char** argv){
             bool tmp_ctr = true;
             while(getline(str2, word, ',')){
                 if(tmp_ctr){
+                    cout<<word<<",";
                     tmp_ctr = false;
                     continue;
                 }
@@ -249,7 +252,8 @@ void initialization(int argc, char** argv){
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
             int cache_size;
             int cache_size_chkpt;
-            double miss_rate_random, miss_rate_lru;
+            double miss_rate_random;
+            uint64_t miss_rate_lru;
             cache_size       = SMALLEST_CACHE;
             cache_size_chkpt = cache_size * 2;
 
@@ -260,7 +264,7 @@ void initialization(int argc, char** argv){
                 miss_rate_random = statcache_random_solver((double) (cache_size / 64));
                 miss_rate_lru    = statcache_lru_solver((double) (cache_size / 64));
 
-                printf ("%lf,%lf", miss_rate_random, miss_rate_lru);
+                printf ("%lf,%lu", miss_rate_random, miss_rate_lru);
 
                 cache_size *= 2;
                 if (cache_size >= cache_size_chkpt)
@@ -269,6 +273,7 @@ void initialization(int argc, char** argv){
                     cache_size_chkpt *= 2;
                 }
             }
+            printf(",%lu", (uint64_t) total_accesses);
             printf("\n");
         }
     }
