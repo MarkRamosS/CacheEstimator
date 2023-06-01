@@ -130,11 +130,11 @@ uint64_t statcache_lru_solver (double L, bool empty_cache)
 	double hits = 0.0;
 	double misses = 0.0;
 
-	if (statcache_lru_calc_unique_occurancies(high_limit) <= L)
-		return 0;
-	
+    if (statcache_lru_calc_unique_occurancies(high_limit) <= L){
+        low_limit = BUCKETS-1;
+    }
     if (statcache_lru_calc_unique_occurancies(low_limit) >= L){
-		 low_limit = BUCKETS-1;
+        return total_accesses;
     }
     else {
         while (high_limit - low_limit > 1)
@@ -228,7 +228,7 @@ void initialization(int argc, char** argv){
         }
         // cout<<"Buckets: "<<buckets.size()<<endl;
         printf("id,");
-        printf("random_512,lru_512,");
+        printf("random_512,lru_512,total_accesses_512,");
         printf("random_1024,lru_1024,");
         printf("random_2048,lru_2048,");
         printf("random_4096,lru_4096,");
