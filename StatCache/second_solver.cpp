@@ -122,7 +122,7 @@ uint64_t statcache_lru_solver (double L, bool empty_cache)
 {
 	int i;
 
-	unsigned low_limit  = 0;
+	unsigned low_limit = new_low_limit;
     //while(buckets[low_limit] < L) low_limit++;
 	unsigned high_limit = BUCKETS-1;
 	unsigned middle_limit;
@@ -239,6 +239,7 @@ void initialization(int argc, char** argv){
             stringstream str2(line);
             histogram.clear();
             cumul_histogram.clear();
+            new_low_limit = 0;
             bool tmp_ctr = true;
             while(getline(str2, word, ',')){
                 if(tmp_ctr){
