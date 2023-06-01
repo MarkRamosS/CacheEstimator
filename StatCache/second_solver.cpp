@@ -15,14 +15,14 @@ using namespace std;
 // when calculating reuse distance scaling or stack distances
 // #define COLD_MISSES
 
-#define SMALLEST_CACHE (32 * 1024)
+#define SMALLEST_CACHE (1024 * 1024)
 #define LARGEST_CACHE  (8192 * 1024)
 
 
 
 //--------->          Interface Functions Prototypes         <--------------
 double statcache_random_solver (double L);
-uint64_t statcache_lru_solver (double L);
+uint64_t statcache_lru_solver (double L, bool empty_cache);
 
 //--------->           Backend Functions Prototypes          <--------------
 static void initialization (int argc, char **argv);
@@ -33,7 +33,9 @@ static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance);
 vector<uint64_t> buckets, diffs, histogram, cumul_histogram;
 unsigned max_rd	      = 0;		    // Highest defined reuse distance
 double total_accesses = 0.0;		// The number of accesses in the histogram
+uint64_t new_low_limit = 0;
 /*
+ *
  * This function computes the sum of the miss probabilities of all sampled 
  * memory references, same as the right-hand side of eq. 5 in the ISPASS 
  * paper. 
@@ -116,7 +118,7 @@ double statcache_random_solver (double L)
  * histogram holds the Histogram Data
  * L is the number of cache lines in the cache (cache size / cache line size)
  */
-uint64_t statcache_lru_solver (double L)
+uint64_t statcache_lru_solver (double L, bool empty_cache)
 {
 	int i;
 
@@ -129,25 +131,44 @@ uint64_t statcache_lru_solver (double L)
 	double misses = 0.0;
 
 	if (statcache_lru_calc_unique_occurancies(high_limit) <= L)
-		return 0.0;
+		return 0;
 	
-	if (statcache_lru_calc_unique_occurancies(low_limit) >= L)
-		return 1.0;
-	
-	while (high_limit - low_limit > 1)
-	{
-		middle_limit = (low_limit + high_limit) / 2;
+    if (statcache_lru_calc_unique_occurancies(low_limit) >= L){
+		 low_limit = BUCKETS-1;
+    }
+    else {
+        while (high_limit - low_limit > 1)
+        {
+            middle_limit = (low_limit + high_limit) / 2;
 
-		if (statcache_lru_calc_unique_occurancies (middle_limit) > L)
-			high_limit = middle_limit;
-		else
-			low_limit = middle_limit;
-	}
+            if (statcache_lru_calc_unique_occurancies (middle_limit) > L)
+                high_limit = middle_limit;
+            else
+                low_limit = middle_limit;
+        }
+    }
 
-	hits = (double) cumul_histogram[low_limit];
-	misses = total_accesses - hits;
+    hits = (double) cumul_histogram[low_limit];
+    misses = total_accesses - hits;
 
-	return misses ;
+    if(empty_cache){
+        // Empty histogram till here (drop accesses)
+        for(int i = 0; i < low_limit; i++){
+            //cout<<i<<":"<<cumul_histogram[i]<<",";
+            cumul_histogram[i] = 0;
+            histogram[i] = 0;
+            //cout<<cumul_histogram[i]<<endl;
+        }
+        for(int i = low_limit; i < cumul_histogram.size(); i++){
+            //cout<<i<<":"<<cumul_histogram[i]<<"~>";
+            cumul_histogram[i] -= hits;
+            //cout<<cumul_histogram[i]<<endl;
+        }
+        histogram[low_limit] = 0;
+        new_low_limit = low_limit;
+    }
+
+	return misses;
 }
 
 static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
@@ -207,10 +228,6 @@ void initialization(int argc, char** argv){
         }
         // cout<<"Buckets: "<<buckets.size()<<endl;
         printf("id,");
-        printf("random_32,lru_32,");
-        printf("random_64,lru_64,");
-        printf("random_128,lru_128,");
-        printf("random_256,lru_256,");
         printf("random_512,lru_512,");
         printf("random_1024,lru_1024,");
         printf("random_2048,lru_2048,");
@@ -257,14 +274,22 @@ void initialization(int argc, char** argv){
             cache_size       = SMALLEST_CACHE;
             cache_size_chkpt = cache_size * 2;
 
+            miss_rate_random = statcache_random_solver((double) (12 * 4 * 1024 / 64));
+            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), true);
+            total_accesses = cumul_histogram[cumul_histogram.size()-1];
+            //printf("%lu\n", (uint64_t) total_accesses);
+            miss_rate_random = statcache_random_solver((double) (512 * 1024 / 64));
+            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), true);
+            printf("%lf,%lu,", miss_rate_random, miss_rate_lru);
+            printf("%lu,", (uint64_t) total_accesses);
+            total_accesses = cumul_histogram[cumul_histogram.size()-1];
+
             while (cache_size <= LARGEST_CACHE)
             {
-                if(cache_size != SMALLEST_CACHE)
-                    printf(",");
                 miss_rate_random = statcache_random_solver((double) (cache_size / 64));
-                miss_rate_lru    = statcache_lru_solver((double) (cache_size / 64));
+                miss_rate_lru    = statcache_lru_solver((double) (cache_size / 64), false);
 
-                printf ("%lf,%lu", miss_rate_random, miss_rate_lru);
+                printf ("%lf,%lu,", miss_rate_random, miss_rate_lru);
 
                 cache_size *= 2;
                 if (cache_size >= cache_size_chkpt)
@@ -273,7 +298,7 @@ void initialization(int argc, char** argv){
                     cache_size_chkpt *= 2;
                 }
             }
-            printf(",%lu", (uint64_t) total_accesses);
+            printf("%lu", (uint64_t) total_accesses);
             printf("\n");
         }
     }
