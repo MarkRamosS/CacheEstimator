@@ -25,7 +25,7 @@ void CACHE::update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, u
     return;
 
   if(type==LOAD || type==RFO){
-//    update(full_addr, type==LOAD, cpu);
+    update(full_addr, type==LOAD, cpu);
   }
   auto begin = std::next(block.begin(), set * NUM_WAY);
   auto end = std::next(begin, NUM_WAY);

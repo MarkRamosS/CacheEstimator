@@ -72,6 +72,7 @@ class Sampler
         std::optional<sample> remove (md_addr_t tag, counter_t now);
         std::optional<sample> remove_expired (md_addr_t idx, counter_t now);
         void stats_print(FILE *fp, counter_t now);
+        void print_sum();
 };
 
 #endif //COMMON_H
