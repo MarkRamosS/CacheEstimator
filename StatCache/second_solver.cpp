@@ -276,11 +276,11 @@ void initialization(int argc, char** argv){
             cache_size_chkpt = cache_size * 2;
 
             miss_rate_random = statcache_random_solver((double) (12 * 4 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), true);
+            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), false);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
             //printf("%lu\n", (uint64_t) total_accesses);
             miss_rate_random = statcache_random_solver((double) (512 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), true);
+            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), false);
             printf("%lf,%lu,", miss_rate_random, miss_rate_lru);
             printf("%lu,", (uint64_t) total_accesses);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
