@@ -122,7 +122,7 @@ uint64_t statcache_lru_solver (double L, bool empty_cache)
 {
 	int i;
 
-	unsigned low_limit = new_low_limit;
+	unsigned low_limit = 0;
     //while(buckets[low_limit] < L) low_limit++;
 	unsigned high_limit = BUCKETS-1;
 	unsigned middle_limit;
@@ -177,7 +177,7 @@ static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
 	uint64_t sum = 0;
 
 	for (i = 0; i <= reuse_distance; i++)
-		sum += (buckets[i]) * histogram[i];
+		sum += (diffs[i]) * histogram[i];
 
     sum += buckets[reuse_distance] * (uint64_t)(total_accesses - cumul_histogram[reuse_distance]);
     // cout<<"MILK:"<<((double)sum)/total_accesses<<endl;
