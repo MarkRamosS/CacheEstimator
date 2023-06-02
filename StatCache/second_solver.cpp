@@ -177,9 +177,11 @@ static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
 	uint64_t sum = 0;
 
 	for (i = 0; i <= reuse_distance; i++)
-		sum += (diffs[i]) * histogram[i];
+        sum += (buckets[i+1] - buckets[i]) * (total_accesses - cumul_histogram[i]);
 
-    sum += buckets[reuse_distance] * (uint64_t)(total_accesses - cumul_histogram[reuse_distance]);
+	//	sum += (diffs[i]) * histogram[i];
+
+    //sum += buckets[reuse_distance] * (uint64_t)(total_accesses - cumul_histogram[reuse_distance]);
     // cout<<"MILK:"<<((double)sum)/total_accesses<<endl;
     return ((double)sum)/total_accesses;
 }
@@ -276,11 +278,11 @@ void initialization(int argc, char** argv){
             cache_size_chkpt = cache_size * 2;
 
             miss_rate_random = statcache_random_solver((double) (12 * 4 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), false);
+            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), true);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
             //printf("%lu\n", (uint64_t) total_accesses);
             miss_rate_random = statcache_random_solver((double) (512 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), false);
+            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), true);
             printf("%lf,%lu,", miss_rate_random, miss_rate_lru);
             printf("%lu,", (uint64_t) total_accesses);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
