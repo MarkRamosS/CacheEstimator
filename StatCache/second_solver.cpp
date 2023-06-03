@@ -179,16 +179,31 @@ static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
 	for (i = 0; i <= reuse_distance; i++)
         sum += (buckets[i+1] - buckets[i]) * (total_accesses - cumul_histogram[i]);
 
-	//	sum += (diffs[i]) * histogram[i];
-
-    //sum += buckets[reuse_distance] * (uint64_t)(total_accesses - cumul_histogram[reuse_distance]);
-    // cout<<"MILK:"<<((double)sum)/total_accesses<<endl;
     return ((double)sum)/total_accesses;
 }
 
-// Input: CSV file with:
-// First line: bucket indices (0,1,2,...)
-// Next lines: For each bucket a reuse distance value
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Usage ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ *
+ * Compile:
+ * make my_solver
+ * ./solver2 path/to/file/input_file.csv > path/to/output/file/output_file.csv
+ *
+ * Input csv file contains:
+ * - 1st line: 
+ * id,0,1,2,...,n,rest_of_columns...
+ * 0,1,...,n are the buckets of the reuse distance histogram (don't have to be continuus ex 0,2,4,...,n)
+ * Set MAX_RD = n to skip the rest of the columns that are irrelevant to statcache.
+ *
+ * - Rest of the lines:
+ * line_id,histogram_value_0,histogram_value_1,histogram_value_2,...,histogram_value_n,rest_of_columns_values...
+ *
+ * Set the value of the second argument statcache_lru_solver to true to remove accessed by this cache. 
+ * (Usefull to remove the reuse distances for accesses of lower layer caches)
+ * 
+ * Output will be a csv file with columns as stated in the print statements output_file.csv
+ *
+ */
+
 void initialization(int argc, char** argv){
     vector<vector<uint64_t>> content;
 	vector<uint64_t> row;
