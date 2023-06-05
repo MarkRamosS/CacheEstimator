@@ -112,6 +112,7 @@ void rdprof_fini()
                 SAMPLING_PERIOD * 1LLU * histogram[i]<< "\t" << 
                 SAMPLING_PERIOD * 1LLU * histogram_read[i]<<std::endl;
     std::cout<<"~~~~~~~~~~Reuse Distance Profiler output end~~~~~~~~~~\n"<<std::endl;
+    smpl->print_sum();
 
     //delete smpl;
 }
@@ -143,6 +144,9 @@ int rdprof(int argc, char *argv[])
 
     //// Never returns
     //PIN_StartProgram();
-    
+
+
+
+   
     return 0;
 }

@@ -168,3 +168,9 @@ void Sampler::stats_print(FILE *fp, counter_t now)
     #endif
     return;
 }
+
+void Sampler::print_sum ()
+{
+    std::cout<<"Sampler size:"<<sampler[0].size()<<std::endl;
+    return;
+}

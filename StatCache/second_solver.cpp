@@ -122,7 +122,7 @@ uint64_t statcache_lru_solver (double L, bool empty_cache)
 {
 	int i;
 
-	unsigned low_limit = new_low_limit;
+	unsigned low_limit = 0;
     //while(buckets[low_limit] < L) low_limit++;
 	unsigned high_limit = BUCKETS-1;
 	unsigned middle_limit;
@@ -177,16 +177,33 @@ static double statcache_lru_calc_unique_occurancies (unsigned reuse_distance)
 	uint64_t sum = 0;
 
 	for (i = 0; i <= reuse_distance; i++)
-		sum += (buckets[i]) * histogram[i];
+        sum += (buckets[i+1] - buckets[i]) * (total_accesses - cumul_histogram[i]);
 
-    sum += buckets[reuse_distance] * (uint64_t)(total_accesses - cumul_histogram[reuse_distance]);
-    // cout<<"MILK:"<<((double)sum)/total_accesses<<endl;
     return ((double)sum)/total_accesses;
 }
 
-// Input: CSV file with:
-// First line: bucket indices (0,1,2,...)
-// Next lines: For each bucket a reuse distance value
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Usage ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ *
+ * Compile:
+ * make my_solver
+ * ./solver2 path/to/file/input_file.csv > path/to/output/file/output_file.csv
+ *
+ * Input csv file contains:
+ * - 1st line: 
+ * id,0,1,2,...,n,rest_of_columns...
+ * 0,1,...,n are the buckets of the reuse distance histogram (don't have to be continuus ex 0,2,4,...,n)
+ * Set MAX_RD = n to skip the rest of the columns that are irrelevant to statcache.
+ *
+ * - Rest of the lines:
+ * line_id,histogram_value_0,histogram_value_1,histogram_value_2,...,histogram_value_n,rest_of_columns_values...
+ *
+ * Set the value of the second argument statcache_lru_solver to true to remove accessed by this cache. 
+ * (Usefull to remove the reuse distances for accesses of lower layer caches)
+ * 
+ * Output will be a csv file with columns as stated in the print statements output_file.csv
+ *
+ */
+
 void initialization(int argc, char** argv){
     vector<vector<uint64_t>> content;
 	vector<uint64_t> row;
@@ -276,11 +293,11 @@ void initialization(int argc, char** argv){
             cache_size_chkpt = cache_size * 2;
 
             miss_rate_random = statcache_random_solver((double) (12 * 4 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), true);
+            miss_rate_lru    = statcache_lru_solver((double) (12 * 4 * 1024 / 64), false);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
             //printf("%lu\n", (uint64_t) total_accesses);
             miss_rate_random = statcache_random_solver((double) (512 * 1024 / 64));
-            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), true);
+            miss_rate_lru    = statcache_lru_solver((double) (512 * 1024  / 64), false);
             printf("%lf,%lu,", miss_rate_random, miss_rate_lru);
             printf("%lu,", (uint64_t) total_accesses);
             total_accesses = cumul_histogram[cumul_histogram.size()-1];
