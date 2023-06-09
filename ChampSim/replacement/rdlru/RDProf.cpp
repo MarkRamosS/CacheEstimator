@@ -54,8 +54,8 @@ void update (uint64_t addr, int is_read, int threadid) {
           smpl->add(tag, now);
 
     // Time for removing stale entries from the sampler?
-    if ((now_lcl[threadid] & REFRESH_PERIOD_MSK) == 0)
-        remove_all_expired(now);
+    //if ((now_lcl[threadid] & REFRESH_PERIOD_MSK) == 0)
+    //    remove_all_expired(now);
 
 #if MAX_THREADS > 1
     //PIN_ReleaseLock(&glock);
@@ -80,18 +80,18 @@ counter_t real_now() {
     return std::accumulate(now_lcl.begin(), now_lcl.end(), 0.0);
 }
 
-void remove_all_expired(counter_t now) {
-    std::optional<sample> entry;
-    for (int idx = 0; idx < SAMPLER_WIDTH; idx++) {
-        do {
-            entry = smpl->remove_expired (idx, now);
-            if (entry) { 
-                histogram[MAX_BUCKET]++;
-                histogram_read[MAX_BUCKET]++;
-            }
-        } while (entry);
-    }
-}
+//void remove_all_expired(counter_t now) {
+//    std::optional<sample> entry;
+//    for (int idx = 0; idx < SAMPLER_WIDTH; idx++) {
+//        do {
+//            entry = smpl->remove_expired (idx, now);
+//            if (entry) { 
+//                histogram[MAX_BUCKET]++;
+//                histogram_read[MAX_BUCKET]++;
+//            }
+//        } while (entry);
+//    }
+//}
 
 void rdprof_init()
 {

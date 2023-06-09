@@ -156,7 +156,7 @@
         "virtual_prefetch": false,
         "prefetch_activate": "LOAD,PREFETCH",
         "prefetcher": "no",
-        "replacement": "ship"
+        "replacement": "mockingjay"
     },
 
     "physical_memory": {
