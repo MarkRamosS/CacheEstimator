@@ -329,8 +329,6 @@ int main(int argc, char** argv)
   sigaction(SIGINT, &sigIntHandler, NULL);
 
   cout << endl << "*** ChampSim Multicore Out-of-Order Simulator ***" << endl << endl;
-  // cache output counter
-  uint64_t output_ctr = 200000; 
 
   // initialize knobs
   uint8_t show_heartbeat = 1;
@@ -470,10 +468,6 @@ int main(int argc, char** argv)
         ooo_cpu[i]->last_sim_instr = ooo_cpu[i]->num_retired;
         ooo_cpu[i]->last_sim_cycle = ooo_cpu[i]->current_cycle;
       }
-      //if( caches[2]->sim_access[0][0] + caches[2]->sim_access[0][1] > output_ctr ){
-      //    output_ctr += 200000;
-      //    cout<<"2"<<endl;
-      //}
       // check for warmup
       // warmup complete
       if ((warmup_complete[i] == 0) && (ooo_cpu[i]->num_retired > warmup_instructions)) {
