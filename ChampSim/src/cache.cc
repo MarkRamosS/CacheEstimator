@@ -56,10 +56,10 @@ void CACHE::handle_fill()
     if (way != NUM_WAY) {
       // update processed packets
       fill_mshr->data = block[set * NUM_WAY + way].data;
+	}
 
-      for (auto ret : fill_mshr->to_return)
-        ret->return_data(&(*fill_mshr));
-    }
+    for (auto ret : fill_mshr->to_return)
+      ret->return_data(&(*fill_mshr));
 
     MSHR.erase(fill_mshr);
     writes_available_this_cycle--;
@@ -186,7 +186,8 @@ void CACHE::readlike_hit(std::size_t set, std::size_t way, PACKET& handle_pkt)
     std::cout << " full_addr: " << handle_pkt.address;
     std::cout << " full_v_addr: " << handle_pkt.v_address << std::dec;
     std::cout << " type: " << +handle_pkt.type;
-    std::cout << " cycle: " << current_cycle << std::endl;
+    std::cout << " cycle: " << current_cycle;
+	std::cout << " way: " << way << std::endl;
   });
 
   BLOCK& hit_block = block[set * NUM_WAY + way];
@@ -301,7 +302,8 @@ bool CACHE::filllike_miss(std::size_t set, std::size_t way, PACKET& handle_pkt)
     std::cout << " full_addr: " << handle_pkt.address;
     std::cout << " full_v_addr: " << handle_pkt.v_address << std::dec;
     std::cout << " type: " << +handle_pkt.type;
-    std::cout << " cycle: " << current_cycle << std::endl;
+    std::cout << " cycle: " << current_cycle;
+	std::cout << " way: " << way << std::endl;
   });
 
   bool bypass = (way == NUM_WAY);
@@ -730,3 +732,4 @@ void CACHE::print_deadlock()
     std::cout << NAME << " MSHR empty" << std::endl;
   }
 }
+
